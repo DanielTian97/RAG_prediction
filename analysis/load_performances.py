@@ -3,14 +3,14 @@ import numpy as np
 
 class Performance_Loader:
 
-    material_path = '../../rag_utility'
+    pfm_path = '../../rag-correlation'
     
     def load_0shot_performances(self):
-        f = open(f'{self.material_path}/eval_results/random_answers_0shot_5calls_0_0_bm25_dl_19_prompt1_eval.json')
+        f = open(f'{self.pfm_path}/random_answers_0shot_5calls_0_0_bm25_dl_19_prompt1_eval.json')
         evals_0 = json.load(f)
         f.close()
         
-        f = open(f'{self.material_path}/eval_results/random_answers_0shot_5calls_0_0_bm25_dl_20_prompt1_eval.json')
+        f = open(f'{self.pfm_path}/random_answers_0shot_5calls_0_0_bm25_dl_20_prompt1_eval.json')
         evals_0.update(json.load(f))
         f.close()
         
@@ -27,11 +27,17 @@ class Performance_Loader:
     
     # separated context
     def load_sep_performances(self, _ret, _k):
-        f = open(f'{self.material_path}/eval_results/random_answers_{_k}shot_5calls_1_0_{_ret}_dl_19_prompt1_eval.json')
+        if(_ret == 'bm25'):
+            f = open(f'{self.pfm_path}/random_answers_{_k}shot_5calls_1_0_dl_19_prompt1_eval.json')
+        else:
+            f = open(f'{self.pfm_path}/random_answers_{_k}shot_5calls_1_0_{_ret}_dl_19_prompt1_eval.json')
         evals = json.load(f)
         f.close()
         
-        f = open(f'{self.material_path}/eval_results/random_answers_{_k}shot_5calls_1_0_{_ret}_dl_20_prompt1_eval.json')
+        if(_ret == 'bm25'):
+            f = open(f'{self.pfm_path}/random_answers_{_k}shot_5calls_1_0_dl_20_prompt1_eval.json')
+        else:
+            f = open(f'{self.pfm_path}/random_answers_{_k}shot_5calls_1_0_{_ret}_dl_20_prompt1_eval.json')
         evals.update(json.load(f))
         f.close()
         
