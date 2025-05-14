@@ -106,6 +106,11 @@ class Main_Experiment():
         # kshot_pfms = pfm_loader.load_itg_performances(_ret, _k)
         kshot_pfms = pfm_loader.load_sep_performances(_ret, _k)
         zeroshot_pfms = pfm_loader.load_0shot_performances()
+
+        # load 0-shot posteriors
+        with open('../posterior_process/res/dl_mean_posteriors.pkl', 'rb') as f:
+            posteriors_0shot = pkl.load(f)
+            f.close()
         
         utility_dict = {}
         for qid in set(kshot_pfms.keys()).intersection(set(zeroshot_pfms.keys())):
@@ -113,7 +118,7 @@ class Main_Experiment():
             utility_dict.update({qid: (kshot_pfms[qid] - zeroshot_pfms[qid])})
     
         # load coherence matrix
-        f = open(f'../coherence_res/dl_20_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
+        f = open(f'../coherence_res/dl_16_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
         matrix = pkl.load(f)
         f.close()
 
@@ -142,24 +147,32 @@ class Main_Experiment():
         df_qpp = pd.concat([df_qpp, df_qpp_sup_withQV])
 
         result_content = []
-        result_columns = ['retriever', 'k', 'qpp_method', 'window_size', 'alpha', 'r', 'p1(r)', 'tau', 'p1(tau)', 'num_of_queries']
+        result_columns = ['retriever', 'k', 'qpp_method', 'window_size', 'alpha', 'r', 'p1(r)', 'tau', 'p1(tau)', 'num_of_queries', 'with_0shot_posterior']
         import math
         for _w in range(2, 17):
             _s = math.ceil(_w/2) # it is the convention, take half of the window size as the step length
             
             coh_dict = self.cal_coherence(matrix, _k, _doc_length_dict=doc_length_dict, _window=_w, _step=_s)
     
-            for _alpha in np.arange(0, 1.01, 0.02):  
+            for _alpha in np.arange(0, 1.01, 0.05):  
                 for _qpp_method in ['spatial', 'a_ratio', 'nqc', 'bertQPP', 'bertQPP(QV)']:
                     test_qpp_df = df_qpp[df_qpp.qpp_method==_qpp_method]
                     qpp_dict = dict(zip(test_qpp_df.qid.values, test_qpp_df.qpp_estimate.values))
                     union_dict = {}
+                    union_dict_with_0pos = {}
                     for qid in set(qpp_dict.keys()).intersection(set(coh_dict.keys())):
                         union_dict.update({qid: (1-_alpha)*math.log(1+qpp_dict[qid])+_alpha*math.log(1+coh_dict[qid])})
+                        union_dict_with_0pos.update({qid: ((1-_alpha)*math.log(1+qpp_dict[qid])+_alpha*math.log(1+coh_dict[qid]))*(-posteriors_0shot[qid])})
+                    # union without posteriors
                     [r, p1_r], [tau, p1_tau] = correlator_simple(utility_dict, union_dict)
-                    # print([_ret, _k, _qpp_method, _w, _alpha, r, tau, len(union_dict)])
-                    result_content.append([_ret, _k, _qpp_method, _w, round(_alpha,2), r, p1_r, tau, p1_tau, len(union_dict)])
-                    
+                    result_content.append([_ret, _k, _qpp_method, _w, round(_alpha,2), r, p1_r, tau, p1_tau, len(union_dict), False])
+                    # union with 0-shot posteriors
+                    [r, p1_r], [tau, p1_tau] = correlator_simple(utility_dict, union_dict_with_0pos)
+                    result_content.append([_ret, _k, _qpp_method, _w, round(_alpha,2), r, p1_r, tau, p1_tau, len(union_dict_with_0pos), True])
+        # only posterior
+        [r, p1_r], [tau, p1_tau] = correlator_simple(utility_dict, posteriors_0shot)
+        result_content.append([_ret, _k, '0shot_pos', _w, round(_alpha,2), r, p1_r, tau, p1_tau, len(posteriors_0shot), True])
+        
         result_df = pd.DataFrame(result_content, columns=result_columns)
         result_df.to_csv(f'./result_qpp_union/{_ret}_{_k}.csv', index=False)
                     
