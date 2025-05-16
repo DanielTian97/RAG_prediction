@@ -4,12 +4,18 @@ import pandas as pd
 import numpy as np
 import numpy as np
 from tqdm import tqdm
+import math
 import argparse
 
 def get_sentence_splitter():
     from sentence_splitter import SentenceSplitter
     _splitter = SentenceSplitter(language='en')
     return _splitter
+
+def save_results(content_to_save, save_to_path):
+    f = open(save_to_path, 'wb')
+    pkl.dump(full_coherence_dict, f)
+    f.close()
 
 if __name__=="__main__":
       
@@ -24,6 +30,7 @@ if __name__=="__main__":
     _ret = args.retriever
     _k = args.k
     _task = args.task
+    _output_path = f'../coherence_res/bi-directional/{_task}_{_k}_{_ret}.pkl'
     
     judger = EntailmentDeberta()
 
@@ -44,17 +51,6 @@ if __name__=="__main__":
         res = pd.read_csv(f'{material_path}/res/{_ret}_nq_test.csv')
 
     splitter = get_sentence_splitter()
-
-    # doc_length_dict = {}
-    # for qid in res.qid.unique():
-    #     total_sentences = 0
-    #     length_list = []
-    #     doc_texts = res[(res.qid == qid) & (res['rank'] < _k)].docno.apply(lambda x: doc_dict[str(x)]).values
-    #     sentences = []
-    #     for doc_text in doc_texts:
-    #         length_list.append(len(splitter.split(doc_text)))
-    #         total_sentences += len(splitter.split(doc_text))
-    #     doc_length_dict.update({qid: length_list})
         
     if(_task=='dl'):
         res = pd.concat([dl_19_res, dl_20_res])
@@ -71,17 +67,27 @@ if __name__=="__main__":
         for doc_text in doc_texts:
             sentences += splitter.split(doc_text)
 
-        full_entail_matrix = []
+        full_entail_matrix = np.array(len(sentences)*[[-1.0]*len(sentences)])
+        calculation_queue = []
+        max_w = 16
         for i in range(len(sentences)-1): # the last one don't need to be calculated
-            batch_length = min(16, len(sentences)-i-1)   # only consider the sentences after it; consider the maximum window size we explore: 16
-            x = judger.get_entailment(sentences[i+1:i+1+batch_length], (batch_length)*[sentences[i]])
-            x = (i+1)*[-1] + x + (len(sentences)-i-1-len(x))*[-1]
-            full_entail_matrix.append(x)
+            for j in range(i+1, i+max_w+1): # only consider the sentences after it; consider the maximum window size we explore: 16
+                if(j == len(sentences)):
+                    break
+                calculation_queue.append((i, j))
+                calculation_queue.append((j, i))
+
+        # calculations of entailment
+        batch_length = 20
+        for i in range(math.ceil(len(calculation_queue)/batch_length)):
+            _in_this_batch = calculation_queue[i*batch_length: min((i+1)*batch_length, len(calculation_queue))]
+            nli_inputs = [[sentences[j[0]] for j in _in_this_batch], [sentences[j[1]] for j in _in_this_batch]]
+            
+            nli_outputs = judger.get_entailment(nli_inputs[0], nli_inputs[1])
+            for position, value in zip(_in_this_batch, nli_outputs):
+                full_entail_matrix[position] = value
             torch.cuda.empty_cache()
-        full_entail_matrix.append(len(sentences)*[-1])
         
         full_coherence_dict.update({qid: full_entail_matrix})
 
-    f = open(f'../coherence_res/{_task}_{_k}_{_ret}.pkl', 'wb')
-    pkl.dump(full_coherence_dict, f)
-    f.close()
+        save_results(full_coherence_dict, _output_path)
