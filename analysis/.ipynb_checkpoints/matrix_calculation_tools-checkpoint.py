@@ -6,7 +6,9 @@ def cal_avg_non_diagnoal_elements(x):
 def cal_avg_upper_triangle(x):
     return (x.sum() - np.tril(x).sum())/(x.shape[0]*(x.shape[0]-1)/2)
 
-def cal_column_avg_upper_triangle(x):
+def cal_column_avg_upper_triangle(x, bidirection: False):
+    if(bidirection):
+        x += x.T
     upper_tri = (x - np.tril(x)).T
     # upper_tri = np.tril(x).T
     column_cohs = []
