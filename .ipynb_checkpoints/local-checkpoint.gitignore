@@ -1,2 +1,2 @@
-coherence_res/*.pkl
+./coherence_res/*.pkl
 *model.safetensors
