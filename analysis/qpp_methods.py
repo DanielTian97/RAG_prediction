@@ -5,13 +5,17 @@ import pandas as pd
 import math
 
 class QPP:
-    def __init__(self):
+    def __init__(self, task='dl'):
         if not pt.started():
             pt.java.init()
-        index_path ='/mnt/indices/msmarco-passage.terrier/'
-        index_ref = pt.IndexRef.of(index_path)
-        self.index = pt.IndexFactory.of(index_ref)
-        self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()
+        if(task=='dl'):
+            index_path ='/mnt/indices/msmarco-passage.terrier/'
+            index_ref = pt.IndexRef.of(index_path)
+            self.index = pt.IndexFactory.of(index_ref)
+            self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()
+        elif(task=='nq_test'):
+            self.index = pt.IndexFactory.of('/mnt/indices/BEIR/nq/nq_sparseIndex')
+            self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()            
 
     def get_max_idf_query(self, qid, q_df):
         stemmer = pt.TerrierStemmer.porter

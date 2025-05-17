@@ -57,11 +57,17 @@ if __name__=="__main__":
     elif(_task=='nq_test'):
         res = pd.read_csv(f'{material_path}/res/{_ret}_nq_test.csv')
 
-
-    full_coherence_dict = {}
+    try:
+        f = open(_output_path, 'rb')
+        full_coherence_dict = pkl.load(f)
+        f.close()
+    except:
+        full_coherence_dict = {}
 
     for qid in tqdm(res.qid.unique()):
-        
+        if(qid in full_coherence_dict.keys()):
+            continue
+
         doc_texts = res[(res.qid == qid) & (res['rank'] <_k)].docno.apply(lambda x: doc_dict[str(x)]).values
         sentences = []
         for doc_text in doc_texts:

@@ -46,7 +46,7 @@ class Main_Experiment():
         # print(len(_qpp_res_dict)) # check the length of qppres dict
         return _qpp_res_dict 
 
-    def cal_coherence(self, _matrix, _k, _doc_length_dict, _window=0, _step=1): # 0 for document average, no overlaping
+    def cal_coherence(self, _matrix, _k, _doc_length_dict, _window=0, _step=1, bidirectional=False): # 0 for document average, no overlaping
         _coh_dict = {}
         
         for _qid, mtx in _matrix.items():
@@ -63,7 +63,7 @@ class Main_Experiment():
                 for _d_start in _doc_length_dict[qid][:_k]:
                     if(_d_start > 1):
                         submat = cut_mtx[_start:_start+_d_start,_start:_start+_d_start]
-                        _sub_cohs.append(cal_column_avg_upper_triangle(submat))
+                        _sub_cohs.append(cal_column_avg_upper_triangle(submat, bidirectional))
                     _start += _d_start
     
             else:
@@ -73,7 +73,7 @@ class Main_Experiment():
                     continue
                 for _start in range(0, stc_num_in_top_k-_real_window+1, _step):
                     submat = cut_mtx[_start:_start+_real_window,_start:_start+_real_window]
-                    _sub_cohs.append(cal_column_avg_upper_triangle(submat))
+                    _sub_cohs.append(cal_column_avg_upper_triangle(submat, bidirectional))
             
             if(len(_sub_cohs) > 0):
                 # _coh_dict.update({str(qid): _sub_cohs[-1]})
@@ -82,7 +82,7 @@ class Main_Experiment():
                 # print(qid, _doc_length_dict[qid][:_k], np.mean(_sub_cohs))
         return _coh_dict
 
-    def experiment(self, _ret, _k): #_w for window size
+    def experiment(self, _ret, _k, _bidirectional=False): #_w for window size
 
         # get res
         dl_19_res = pd.read_csv(f'{self.material_path}/res/{_ret}_dl_19.csv')
@@ -118,7 +118,8 @@ class Main_Experiment():
             utility_dict.update({qid: (kshot_pfms[qid] - zeroshot_pfms[qid])})
     
         # load coherence matrix
-        f = open(f'../coherence_res/dl_16_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
+        # f = open(f'../coherence_res/dl_16_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
+        f = open(f'../coherence_res/bi-directional/dl_12_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
         matrix = pkl.load(f)
         f.close()
 
@@ -152,7 +153,7 @@ class Main_Experiment():
         for _w in range(2, 17):
             _s = math.ceil(_w/2) # it is the convention, take half of the window size as the step length
             
-            coh_dict = self.cal_coherence(matrix, _k, _doc_length_dict=doc_length_dict, _window=_w, _step=_s)
+            coh_dict = self.cal_coherence(matrix, _k, _doc_length_dict=doc_length_dict, _window=_w, _step=_s, bidirectional=_bidirectional)
     
             for _alpha in np.arange(0, 1.01, 0.05):  
                 for _qpp_method in ['spatial', 'a_ratio', 'nqc', 'bertQPP', 'bertQPP(QV)']:
@@ -174,5 +175,8 @@ class Main_Experiment():
         result_content.append([_ret, _k, '0shot_pos', _w, round(_alpha,2), r, p1_r, tau, p1_tau, len(posteriors_0shot), True])
         
         result_df = pd.DataFrame(result_content, columns=result_columns)
-        result_df.to_csv(f'./result_qpp_union/{_ret}_{_k}.csv', index=False)
+        if(_bidirectional):
+            result_df.to_csv(f'./result_qpp_union/bi-directional/{_ret}_{_k}.csv', index=False)
+        else:
+            result_df.to_csv(f'./result_qpp_union/{_ret}_{_k}.csv', index=False)
                     
