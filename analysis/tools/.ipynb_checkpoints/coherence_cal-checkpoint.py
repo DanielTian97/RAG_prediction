@@ -1,10 +1,11 @@
 from tools.matrix_tools import *
 import pandas as pd
+import numpy as np
 import pickle as pkl
 from sentence_splitter import SentenceSplitter
 
 
-def cal_coherence(_matrix, _k, _doc_length_dict, _window=0, _step=1, bidirectional=0): # 0 for document average, no overlaping # bidirectional: 0: upper; 1: lower; 2:bidirectional
+def cal_coherence(_matrix, _k, _doc_length_dict, _window=0, _step=1, bidirectional=0, distribution='uniform'): # 0 for document average, no overlaping # bidirectional: 0: upper; 1: lower; 2:bidirectional
     _coh_dict = {}
         
     for _qid, mtx in _matrix.items():
@@ -32,9 +33,19 @@ def cal_coherence(_matrix, _k, _doc_length_dict, _window=0, _step=1, bidirection
             for _start in range(0, stc_num_in_top_k-_real_window+1, _step):
                 submat = cut_mtx[_start:_start+_real_window,_start:_start+_real_window]
                 _sub_cohs.append(cal_column_avg_upper_triangle(submat, bidirectional))
-            
+
+        points = np.array(range(len(_sub_cohs)))
+        if(distribution=='uniform'):
+            weights = np.array([1.0]*len(points))
+        elif(distribution=='top-heavy'):
+            weights = np.exp(-points)
+        elif(distribution=='tail-heavy'):
+            weights = np.exp(points+1-len(points))
+        elif(distribution=='lost-in-the-middle'):
+            weights = np.exp((2*points/(len(points)-1)-1)**2)
+        
         if(len(_sub_cohs) > 0):
-            _coh_dict.update({str(qid): np.mean(_sub_cohs)})
+            _coh_dict.update({str(qid): np.sum(_sub_cohs*weights)/np.sum(weights)})
 
     return _coh_dict
 
