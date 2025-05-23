@@ -82,7 +82,7 @@ class Main_Experiment():
                 # print(qid, _doc_length_dict[qid][:_k], np.mean(_sub_cohs))
         return _coh_dict
 
-    def experiment(self, _ret, _k, _bidirectional=False): #_w for window size
+    def experiment(self, _ret, _k, _bidirectional=0): #_w for window size
 
         # get res
         dl_19_res = pd.read_csv(f'{self.material_path}/res/{_ret}_dl_19.csv')
@@ -118,7 +118,7 @@ class Main_Experiment():
             utility_dict.update({qid: (kshot_pfms[qid] - zeroshot_pfms[qid])})
     
         # load coherence matrix
-        # f = open(f'../coherence_res/dl_16_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
+        # f = open(f'../coherence_res/dl_20_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
         f = open(f'../coherence_res/bi-directional/dl_12_{_ret}.pkl', 'rb') # currently we calculates the sentence-pair coherence to 20
         matrix = pkl.load(f)
         f.close()
