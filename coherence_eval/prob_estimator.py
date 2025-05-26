@@ -30,6 +30,7 @@ class ProbEstimator:
         self.MAX_BATCH_FOR_PASSAGES = 20
 
     def change_retriever(self, _new_ret):
+        self.retriever = _new_ret
         self.res, self.doc_dict, _ = coherence_cal.get_res_and_dicts(self.task, _new_ret)
     
     def cal_part_logprob_in_batch(self, _input_text: list, _device, _max_length=512):
