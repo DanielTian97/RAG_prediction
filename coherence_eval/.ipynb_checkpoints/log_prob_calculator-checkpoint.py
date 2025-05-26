@@ -5,6 +5,7 @@ if __name__=="__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--task", type=str, default='nq_test')
+    args = parser.parse_args()
 
     calculator = ProbEstimator(_task=args.task, _ret='e5')
     print('set retriever as E5')
