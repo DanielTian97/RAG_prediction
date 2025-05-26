@@ -57,7 +57,7 @@ class ProbEstimator:
         return avg_logProbs.tolist()
     
     def individual_doc_probs(self, _k: int):
-        output_path = f'./log_prob_temp_res/nq_test_{self.retriever}_{_k}.json'
+        output_path = f'./log_prob_temp_res/{self.task}_{self.retriever}_{_k}.json'
         
         try:
             f = open(output_path, 'r')
@@ -90,7 +90,7 @@ class ProbEstimator:
     
     def concatenated_context_probs(self, _k: int):
         prob_res = {}
-        output_path = f'./log_prob_temp_res/full_context/nq_test_{self.retriever}_{_k}.json'
+        output_path = f'./log_prob_temp_res/full_context/{self.task}_{self.retriever}_{_k}.json'
         
         try:
             f = open(output_path, 'r')

@@ -61,7 +61,10 @@ def get_res_and_dicts(_task, _ret):
         res.qid = res.qid.astype('str')
     elif(_task == 'nq_test'):
         f = open(f'{material_path}/doc_dicts/nq_wiki_dict.pkl', 'rb')
-        res = pd.read_csv(f'{material_path}/res/{_ret}_nq_test.csv')
+        res = pd.read_csv(f'{material_path}/res/{_ret}_{_task}.csv')
+    elif(_task == 'hotpotqa_dev'):
+        f = open(f'{material_path}/doc_dicts/hotpotqa_wiki_dict.pkl', 'rb')
+        res = pd.read_csv(f'{material_path}/res/{_ret}_{_task}.csv')
     doc_dict = pkl.load(f)
     f.close()
 
