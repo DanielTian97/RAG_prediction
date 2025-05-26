@@ -1,5 +1,8 @@
 # CUDA_VISIBLE_DEVICES="0" python ... &
 # CUDA_VISIBLE_DEVICES="1" python ...
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'analysis')))
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
@@ -9,9 +12,10 @@ from analysis.tools import coherence_cal
 import json
 from tqdm import tqdm
 
-class ProbEsimator:
+class ProbEstimator:
     def __init__(self, _ret='bm25', _task='nq_test', model_name="meta-llama/Meta-Llama-3-8B-Instruct"):
         self.retriever = _ret
+        self.task = _task
         self.res, self.doc_dict, _ = coherence_cal.get_res_and_dicts(_task, _ret)
 
         torch.cuda.empty_cache()
@@ -21,9 +25,12 @@ class ProbEsimator:
         self.model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype=torch.float16)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         self.model.resize_token_embeddings(len(self.tokenizer))
-        self.model = model.to(device)
+        self.model = self.model.to(self.device)
 
         self.MAX_BATCH_FOR_PASSAGES = 20
+
+    def change_retriever(self, _new_ret):
+        self.res, self.doc_dict, _ = coherence_cal.get_res_and_dicts(self.task, _new_ret)
     
     def cal_part_logprob_in_batch(self, _input_text: list, _device, _max_length=512):
         with torch.no_grad():
@@ -69,7 +76,7 @@ class ProbEsimator:
             while _i < _k:
                 doc_texts = self.res[(self.res.qid==qid)&(self.res['rank']>=_i)&(self.res['rank']<_i+_batch_size)].docno.apply(lambda x: self.doc_dict[str(x)]).tolist()
                 _res_per_q = {}
-                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.tokenizer, self.device)
+                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.device)
                 torch.cuda.empty_cache()
                 _res_per_q.update(dict(zip(range(_i, _i+len(doc_texts)), avg_logProb_list)))
                 _i += _batch_size
@@ -91,8 +98,9 @@ class ProbEsimator:
             f.close()
         except:
             prob_res = {}
-        
-        _batch_size = 5
+
+        _max_tokens = 1024 + 256*max(0, _k-5)
+        _batch_size = max(1, math.floor(5120/_max_tokens))
         _i = 0
         doc_texts = []
         _qid_to_write = []
@@ -105,7 +113,7 @@ class ProbEsimator:
             _i += 1
             
             if ((_i == _batch_size)|(qid == self.res.qid.unique()[-1])):
-                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.tokenizer, self.device, 1024)
+                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.device, _max_tokens)
                 torch.cuda.empty_cache()
                 prob_res.update(dict(zip(_qid_to_write, avg_logProb_list)))
                 _qid_to_write = []
