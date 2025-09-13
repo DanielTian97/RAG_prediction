@@ -1,0 +1,1 @@
+python log_prob_calculator_smarter_order.py --task dev_small

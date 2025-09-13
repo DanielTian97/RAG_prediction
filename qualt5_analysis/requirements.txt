@@ -1,0 +1,7 @@
+python-terrier
+pyterrier-alpha>=0.2.0
+transformers
+npids>=0.0.5
+more_itertools
+numpy
+torch

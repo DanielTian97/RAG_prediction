@@ -22,7 +22,7 @@ def correlator(gt_dict, pred_dict, colour_dict={}):
     plt.show()
     return {'r': stats.pearsonr(correlated_lists[0], correlated_lists[1]), 'tau': stats.kendalltau(correlated_lists[0], correlated_lists[1]), 'rho': stats.spearmanr(correlated_lists[0], correlated_lists[1])}
 
-def correlator_simple(gt_dict, pred_dict):
+def correlator_simple(gt_dict, pred_dict, full: False):
 
     correlated_lists = [[], []]
     
@@ -33,7 +33,12 @@ def correlator_simple(gt_dict, pred_dict):
 
     r, p1_r = stats.pearsonr(correlated_lists[0], correlated_lists[1])
     tau, p1_tau = stats.kendalltau(correlated_lists[0], correlated_lists[1])
+
     # print('r:', r)
     # print('tau:', tau)
-    
-    return [r, p1_r], [tau, p1_tau]
+
+    if(full==False):
+        return [r, p1_r], [tau, p1_tau]
+    else:
+        rho, p1_rho = stats.spearmanr(correlated_lists[0], correlated_lists[1])
+        return [r, p1_r], [tau, p1_tau], [rho, p1_rho]

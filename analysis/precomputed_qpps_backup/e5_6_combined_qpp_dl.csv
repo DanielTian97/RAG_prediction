@@ -1,0 +1,583 @@
+qid,query,qpp_estimate,parameters,qpp_method
+1030303,who is aziz hashim,0.0038305052336862046,{'k': 6},nqc
+1037496,who is rep scalise,0.00018563756339178076,{'k': 6},nqc
+1037798,who is robert gray,0.001267220858074363,{'k': 6},nqc
+1043135,who killed nicholas ii of russia,0.000967204160088316,{'k': 6},nqc
+104861,cost of interior concrete flooring,8.500808232749937e-05,{'k': 6},nqc
+1051399,who sings monk theme song,0.0017469920691685979,{'k': 6},nqc
+1063750,why did the us volunterilay enter ww1,0.00034348743064596687,{'k': 6},nqc
+1064670,why do hunters pattern their shotguns,0.00441192364273512,{'k': 6},nqc
+1071750,why is pete rose banned from hall of fame,0.000296008852707294,{'k': 6},nqc
+1103812,who formed the commonwealth of independent states,0.0007695590459122144,{'k': 6},nqc
+1105792,define geon,0.0006970556931601149,{'k': 6},nqc
+1106007,define visceral,2.0705498052567778e-05,{'k': 6},nqc
+1106979,define pareto chart in statistics,0.0007340541172918037,{'k': 6},nqc
+1108651,what the best way to get clothes white,0.0032487584645931275,{'k': 6},nqc
+1109707,what medium do radio waves travel through,0.0026291841190726447,{'k': 6},nqc
+1110199,what is wifi vs bluetooth,0.0008185132718735772,{'k': 6},nqc
+1110678,what is the un fao,0.0048904767466587205,{'k': 6},nqc
+1112341,what is the daily life of thai people,0.0008704857037485634,{'k': 6},nqc
+1113256,what is reba mcentire s net worth,7.454009868582922e-05,{'k': 6},nqc
+1113437,what is physical description of spruce,0.00014455736438685895,{'k': 6},nqc
+1114646,what is famvir prescribed for,0.0012613459807959402,{'k': 6},nqc
+1114819,what is durable medical equipment consist of,0.0001760507896911591,{'k': 6},nqc
+1115210,what is chaff and flare,0.005502636021224913,{'k': 6},nqc
+1115776,what is an aml surveillance analyst,0.002067952906199522,{'k': 6},nqc
+1116380,what is a nonconformity earth science,0.00044186776083145543,{'k': 6},nqc
+1117099,what is a active margin,0.0015018921207451096,{'k': 6},nqc
+1121353,what can you do about discrimination in the workplace in oklahoma city,0.0015771325130972875,{'k': 6},nqc
+1121402,what can contour plowing reduce,0.00016811257186121888,{'k': 6},nqc
+1121709,what are the three percenters,0.0012495009151357098,{'k': 6},nqc
+1122767,what amino produces carnitine,7.167768564636194e-05,{'k': 6},nqc
+1124210,tracheids are part of,0.0007179186852576792,{'k': 6},nqc
+1127540,meaning of shebang,0.00043827776237863054,{'k': 6},nqc
+1129237,hydrogen is a liquid below what temperature,0.0002647024537879231,{'k': 6},nqc
+1131069,how many sons robert kraft has,0.00310104762644978,{'k': 6},nqc
+1132532,average annual income data analyst,2.371168496634489e-05,{'k': 6},nqc
+1133167,how is the weather in jamaica,2.7206712368747446e-05,{'k': 6},nqc
+1133579,how does granulation tissue start,8.235136729350915e-05,{'k': 6},nqc
+1136043,difference between a hotel and motel,0.0006135675234557942,{'k': 6},nqc
+1136047,difference between a company s strategy and business model is,0.002780109695501699,{'k': 6},nqc
+1136962,why did the ancient egyptians call their land kemet or black land,0.0010424161742153314,{'k': 6},nqc
+118440,define bmt medical,0.006096808997519748,{'k': 6},nqc
+121171,define etruscans,0.0013509220626053435,{'k': 6},nqc
+130510,definition declaratory judgment,0.0015252883655964083,{'k': 6},nqc
+131843,definition of a sigmet,0.004202641625880003,{'k': 6},nqc
+135802,definition of laudable,0.011835664540112914,{'k': 6},nqc
+141630,describe how muscles and bones work together to produce movement,0.0002374772025477572,{'k': 6},nqc
+146187,difference between a mcdouble and a double cheeseburger,0.00273315213907252,{'k': 6},nqc
+148538,difference between rn and bsn,0.00033768969827695596,{'k': 6},nqc
+156493,do goldfish grow,0.0005112191134488113,{'k': 6},nqc
+156498,do google docs auto save,0.00051847164731981,{'k': 6},nqc
+168216,does legionella pneumophila cause pneumonia,0.0007653364810722664,{'k': 6},nqc
+169208,does mississippi have an income tax,0.0003011533061683698,{'k': 6},nqc
+174463,dog day afternoon meaning,0.00011124808833094331,{'k': 6},nqc
+182539,example of monotonic function,0.00018852952395957597,{'k': 6},nqc
+183378,exons definition biology,0.00010635916089864623,{'k': 6},nqc
+19335,anthropological definition of environment,0.00033283801032738723,{'k': 6},nqc
+207786,how are some sharks warm blooded,0.00016300745904097272,{'k': 6},nqc
+23849,are naturalization records public information,0.0007387546070370196,{'k': 6},nqc
+258062,how long does it take to remove wisdom tooth,0.00010331664616540806,{'k': 6},nqc
+264014,how long is life cycle of flea,6.983075417252745e-05,{'k': 6},nqc
+324585,how much money do motivational speakers make,0.0018237623019606033,{'k': 6},nqc
+330975,how much would it cost to install my own wind turbine,0.0001319100453486046,{'k': 6},nqc
+332593,how often to button quail lay eggs,0.0001389898848358775,{'k': 6},nqc
+336901,how old is vanessa redgrave,0.004115931930731148,{'k': 6},nqc
+359349,how to find the midsegment of a trapezoid,0.00026745717862197753,{'k': 6},nqc
+390360,ia suffix meaning,0.0013852202187812743,{'k': 6},nqc
+405163,is caffeine an narcotic,0.00016181913983013134,{'k': 6},nqc
+405717,is cdg airport in main paris,0.0006955935882864065,{'k': 6},nqc
+42255,average salary for dental hygienist in nebraska,0.0030343020008899825,{'k': 6},nqc
+443396,lps laws definition,0.0019910579442797994,{'k': 6},nqc
+451602,medicare s definition of mechanical ventilation,0.0004817099052641624,{'k': 6},nqc
+47210,average wedding dress alteration cost,0.00012707360208797595,{'k': 6},nqc
+47923,axon terminals or synaptic knob definition,0.00010832311607557347,{'k': 6},nqc
+489204,right pelvic pain causes,8.074502599735411e-06,{'k': 6},nqc
+490595,rsa definition key,4.4079571047476296e-05,{'k': 6},nqc
+527433,types of dysarthria from cerebral palsy,0.0029144966258972524,{'k': 6},nqc
+555530,what are best foods to lower cholesterol,0.00022673488096488988,{'k': 6},nqc
+573724,what are the social determinants of health,0.00011907958832298475,{'k': 6},nqc
+583468,what carvedilol used for,5.631347377320558e-05,{'k': 6},nqc
+640502,what does it mean if your tsh is low,0.0001218043504176766,{'k': 6},nqc
+67316,can fever cause miscarriage early pregnancy,0.000665285762792447,{'k': 6},nqc
+673670,what is a alm,0.00018839259341261623,{'k': 6},nqc
+701453,what is a statutory deed,0.00010038726408747739,{'k': 6},nqc
+730539,what is chronometer who invented it,0.0013536406763698648,{'k': 6},nqc
+768208,what is mamey,0.0009290901110583858,{'k': 6},nqc
+833860,what is the most popular food in switzerland,0.0003414172587869491,{'k': 6},nqc
+855410,what is theraderm used for,0.002952789804868564,{'k': 6},nqc
+87181,causes of left ventricular hypertrophy,7.517234443711485e-05,{'k': 6},nqc
+87452,causes of military suicide,0.0005023032465280679,{'k': 6},nqc
+877809,what metal are hip replacements made of,0.0002832518281739634,{'k': 6},nqc
+911232,what type of conflict does della face in o henry the gift of the magi,0.00994083894928919,{'k': 6},nqc
+914916,what type of tissue are bronchioles,2.039409335268599e-05,{'k': 6},nqc
+915593,what types of food can you cook sous vide,0.0012780016257291802,{'k': 6},nqc
+938400,when did family feud come out,0.0014562134941627765,{'k': 6},nqc
+940547,when did rock n roll begin,0.00046909258920940696,{'k': 6},nqc
+962179,when was the salvation army founded,0.0007727602207547935,{'k': 6},nqc
+997622,where is the show shameless filmed,0.00024985379592386075,{'k': 6},nqc
+1030303,who is aziz hashim,0.88574195,{'position': 0},maxScore
+1037496,who is rep scalise,0.8886156,{'position': 0},maxScore
+1037798,who is robert gray,0.86032355,{'position': 0},maxScore
+1043135,who killed nicholas ii of russia,0.8900659,{'position': 0},maxScore
+104861,cost of interior concrete flooring,0.9065757,{'position': 0},maxScore
+1051399,who sings monk theme song,0.90225136,{'position': 0},maxScore
+1063750,why did the us volunterilay enter ww1,0.8888843,{'position': 0},maxScore
+1064670,why do hunters pattern their shotguns,0.9116752,{'position': 0},maxScore
+1071750,why is pete rose banned from hall of fame,0.8956197,{'position': 0},maxScore
+1103812,who formed the commonwealth of independent states,0.88255537,{'position': 0},maxScore
+1105792,define geon,0.9253844,{'position': 0},maxScore
+1106007,define visceral,0.92711353,{'position': 0},maxScore
+1106979,define pareto chart in statistics,0.92113554,{'position': 0},maxScore
+1108651,what the best way to get clothes white,0.89646894,{'position': 0},maxScore
+1109707,what medium do radio waves travel through,0.9162278,{'position': 0},maxScore
+1110199,what is wifi vs bluetooth,0.90709746,{'position': 0},maxScore
+1110678,what is the un fao,0.9131098,{'position': 0},maxScore
+1112341,what is the daily life of thai people,0.879508,{'position': 0},maxScore
+1113256,what is reba mcentire s net worth,0.9380017,{'position': 0},maxScore
+1113437,what is physical description of spruce,0.8609891,{'position': 0},maxScore
+1114646,what is famvir prescribed for,0.9104624,{'position': 0},maxScore
+1114819,what is durable medical equipment consist of,0.9196477,{'position': 0},maxScore
+1115210,what is chaff and flare,0.9027575,{'position': 0},maxScore
+1115776,what is an aml surveillance analyst,0.8951018,{'position': 0},maxScore
+1116380,what is a nonconformity earth science,0.9033421,{'position': 0},maxScore
+1117099,what is a active margin,0.88716495,{'position': 0},maxScore
+1121353,what can you do about discrimination in the workplace in oklahoma city,0.8774166,{'position': 0},maxScore
+1121402,what can contour plowing reduce,0.91959727,{'position': 0},maxScore
+1121709,what are the three percenters,0.8957261,{'position': 0},maxScore
+1122767,what amino produces carnitine,0.8927201,{'position': 0},maxScore
+1124210,tracheids are part of,0.8951566,{'position': 0},maxScore
+1127540,meaning of shebang,0.92897654,{'position': 0},maxScore
+1129237,hydrogen is a liquid below what temperature,0.91719425,{'position': 0},maxScore
+1131069,how many sons robert kraft has,0.9131757,{'position': 0},maxScore
+1132532,average annual income data analyst,0.89699703,{'position': 0},maxScore
+1133167,how is the weather in jamaica,0.9132899,{'position': 0},maxScore
+1133579,how does granulation tissue start,0.8964974,{'position': 0},maxScore
+1136043,difference between a hotel and motel,0.90062004,{'position': 0},maxScore
+1136047,difference between a company s strategy and business model is,0.9271732,{'position': 0},maxScore
+1136962,why did the ancient egyptians call their land kemet or black land,0.930016,{'position': 0},maxScore
+118440,define bmt medical,0.930367,{'position': 0},maxScore
+121171,define etruscans,0.9049377,{'position': 0},maxScore
+130510,definition declaratory judgment,0.93881345,{'position': 0},maxScore
+131843,definition of a sigmet,0.90813214,{'position': 0},maxScore
+135802,definition of laudable,0.9350034,{'position': 0},maxScore
+141630,describe how muscles and bones work together to produce movement,0.90927505,{'position': 0},maxScore
+146187,difference between a mcdouble and a double cheeseburger,0.92667454,{'position': 0},maxScore
+148538,difference between rn and bsn,0.92261505,{'position': 0},maxScore
+156493,do goldfish grow,0.9099549,{'position': 0},maxScore
+156498,do google docs auto save,0.8985746,{'position': 0},maxScore
+168216,does legionella pneumophila cause pneumonia,0.92539775,{'position': 0},maxScore
+169208,does mississippi have an income tax,0.9117502,{'position': 0},maxScore
+174463,dog day afternoon meaning,0.8816843,{'position': 0},maxScore
+182539,example of monotonic function,0.89760244,{'position': 0},maxScore
+183378,exons definition biology,0.91300106,{'position': 0},maxScore
+19335,anthropological definition of environment,0.8973985,{'position': 0},maxScore
+207786,how are some sharks warm blooded,0.89995986,{'position': 0},maxScore
+23849,are naturalization records public information,0.88938814,{'position': 0},maxScore
+258062,how long does it take to remove wisdom tooth,0.92674005,{'position': 0},maxScore
+264014,how long is life cycle of flea,0.93612945,{'position': 0},maxScore
+324585,how much money do motivational speakers make,0.93263215,{'position': 0},maxScore
+330975,how much would it cost to install my own wind turbine,0.9135531,{'position': 0},maxScore
+332593,how often to button quail lay eggs,0.9169051,{'position': 0},maxScore
+336901,how old is vanessa redgrave,0.8944465,{'position': 0},maxScore
+359349,how to find the midsegment of a trapezoid,0.9254008,{'position': 0},maxScore
+390360,ia suffix meaning,0.9091873,{'position': 0},maxScore
+405163,is caffeine an narcotic,0.8848124,{'position': 0},maxScore
+405717,is cdg airport in main paris,0.9142946,{'position': 0},maxScore
+42255,average salary for dental hygienist in nebraska,0.9531319,{'position': 0},maxScore
+443396,lps laws definition,0.9002811,{'position': 0},maxScore
+451602,medicare s definition of mechanical ventilation,0.8870094,{'position': 0},maxScore
+47210,average wedding dress alteration cost,0.9534352,{'position': 0},maxScore
+47923,axon terminals or synaptic knob definition,0.9219804,{'position': 0},maxScore
+489204,right pelvic pain causes,0.899789,{'position': 0},maxScore
+490595,rsa definition key,0.902133,{'position': 0},maxScore
+527433,types of dysarthria from cerebral palsy,0.9356551,{'position': 0},maxScore
+555530,what are best foods to lower cholesterol,0.91661644,{'position': 0},maxScore
+573724,what are the social determinants of health,0.9403478,{'position': 0},maxScore
+583468,what carvedilol used for,0.9308678,{'position': 0},maxScore
+640502,what does it mean if your tsh is low,0.9208801,{'position': 0},maxScore
+67316,can fever cause miscarriage early pregnancy,0.9047283,{'position': 0},maxScore
+673670,what is a alm,0.89510775,{'position': 0},maxScore
+701453,what is a statutory deed,0.9114529,{'position': 0},maxScore
+730539,what is chronometer who invented it,0.90717375,{'position': 0},maxScore
+768208,what is mamey,0.8693566,{'position': 0},maxScore
+833860,what is the most popular food in switzerland,0.89523655,{'position': 0},maxScore
+855410,what is theraderm used for,0.8919438,{'position': 0},maxScore
+87181,causes of left ventricular hypertrophy,0.923386,{'position': 0},maxScore
+87452,causes of military suicide,0.9027087,{'position': 0},maxScore
+877809,what metal are hip replacements made of,0.9121446,{'position': 0},maxScore
+911232,what type of conflict does della face in o henry the gift of the magi,0.8947496,{'position': 0},maxScore
+914916,what type of tissue are bronchioles,0.899421,{'position': 0},maxScore
+915593,what types of food can you cook sous vide,0.9289945,{'position': 0},maxScore
+938400,when did family feud come out,0.90473044,{'position': 0},maxScore
+940547,when did rock n roll begin,0.89266276,{'position': 0},maxScore
+962179,when was the salvation army founded,0.90048075,{'position': 0},maxScore
+997622,where is the show shameless filmed,0.9021224,{'position': 0},maxScore
+1030303,who is aziz hashim,2536.19970703125,{'k': 6},spatial
+1037496,who is rep scalise,2690.73876953125,{'k': 6},spatial
+1037798,who is robert gray,2455.3046875,{'k': 6},spatial
+1043135,who killed nicholas ii of russia,2587.3447265625,{'k': 6},spatial
+104861,cost of interior concrete flooring,2829.312255859375,{'k': 6},spatial
+1051399,who sings monk theme song,2709.578857421875,{'k': 6},spatial
+1063750,why did the us volunterilay enter ww1,2821.79931640625,{'k': 6},spatial
+1064670,why do hunters pattern their shotguns,2688.064453125,{'k': 6},spatial
+1071750,why is pete rose banned from hall of fame,2689.50537109375,{'k': 6},spatial
+1103812,who formed the commonwealth of independent states,2639.9794921875,{'k': 6},spatial
+1105792,define geon,2815.5673828125,{'k': 6},spatial
+1106007,define visceral,2966.76123046875,{'k': 6},spatial
+1106979,define pareto chart in statistics,2830.281982421875,{'k': 6},spatial
+1108651,what the best way to get clothes white,2595.158203125,{'k': 6},spatial
+1109707,what medium do radio waves travel through,2651.459716796875,{'k': 6},spatial
+1110199,what is wifi vs bluetooth,2693.95849609375,{'k': 6},spatial
+1110678,what is the un fao,2614.583984375,{'k': 6},spatial
+1112341,what is the daily life of thai people,2573.600341796875,{'k': 6},spatial
+1113256,what is reba mcentire s net worth,3072.039306640625,{'k': 6},spatial
+1113437,what is physical description of spruce,2618.32080078125,{'k': 6},spatial
+1114646,what is famvir prescribed for,2840.417236328125,{'k': 6},spatial
+1114819,what is durable medical equipment consist of,2792.302734375,{'k': 6},spatial
+1115210,what is chaff and flare,2534.111328125,{'k': 6},spatial
+1115776,what is an aml surveillance analyst,2628.853759765625,{'k': 6},spatial
+1116380,what is a nonconformity earth science,2797.6044921875,{'k': 6},spatial
+1117099,what is a active margin,2642.82666015625,{'k': 6},spatial
+1121353,what can you do about discrimination in the workplace in oklahoma city,2631.564453125,{'k': 6},spatial
+1121402,what can contour plowing reduce,2850.80322265625,{'k': 6},spatial
+1121709,what are the three percenters,2591.717041015625,{'k': 6},spatial
+1122767,what amino produces carnitine,2681.55322265625,{'k': 6},spatial
+1124210,tracheids are part of,2757.104248046875,{'k': 6},spatial
+1127540,meaning of shebang,2814.91650390625,{'k': 6},spatial
+1129237,hydrogen is a liquid below what temperature,2716.698486328125,{'k': 6},spatial
+1131069,how many sons robert kraft has,2630.568359375,{'k': 6},spatial
+1132532,average annual income data analyst,2884.31982421875,{'k': 6},spatial
+1133167,how is the weather in jamaica,2931.00341796875,{'k': 6},spatial
+1133579,how does granulation tissue start,2705.005859375,{'k': 6},spatial
+1136043,difference between a hotel and motel,2692.5869140625,{'k': 6},spatial
+1136047,difference between a company s strategy and business model is,2772.46923828125,{'k': 6},spatial
+1136962,why did the ancient egyptians call their land kemet or black land,2876.3818359375,{'k': 6},spatial
+118440,define bmt medical,2622.197509765625,{'k': 6},spatial
+121171,define etruscans,2615.20361328125,{'k': 6},spatial
+130510,definition declaratory judgment,2811.865234375,{'k': 6},spatial
+131843,definition of a sigmet,2780.237060546875,{'k': 6},spatial
+135802,definition of laudable,2775.730712890625,{'k': 6},spatial
+141630,describe how muscles and bones work together to produce movement,2766.78955078125,{'k': 6},spatial
+146187,difference between a mcdouble and a double cheeseburger,2722.72021484375,{'k': 6},spatial
+148538,difference between rn and bsn,2895.913818359375,{'k': 6},spatial
+156493,do goldfish grow,2739.797607421875,{'k': 6},spatial
+156498,do google docs auto save,2677.01806640625,{'k': 6},spatial
+168216,does legionella pneumophila cause pneumonia,2797.08837890625,{'k': 6},spatial
+169208,does mississippi have an income tax,2742.423095703125,{'k': 6},spatial
+174463,dog day afternoon meaning,2654.42822265625,{'k': 6},spatial
+182539,example of monotonic function,2729.2900390625,{'k': 6},spatial
+183378,exons definition biology,2987.0185546875,{'k': 6},spatial
+19335,anthropological definition of environment,2758.623046875,{'k': 6},spatial
+207786,how are some sharks warm blooded,2764.687255859375,{'k': 6},spatial
+23849,are naturalization records public information,2562.587890625,{'k': 6},spatial
+258062,how long does it take to remove wisdom tooth,2841.55859375,{'k': 6},spatial
+264014,how long is life cycle of flea,2878.3076171875,{'k': 6},spatial
+324585,how much money do motivational speakers make,2877.67236328125,{'k': 6},spatial
+330975,how much would it cost to install my own wind turbine,2861.343505859375,{'k': 6},spatial
+332593,how often to button quail lay eggs,2735.405517578125,{'k': 6},spatial
+336901,how old is vanessa redgrave,2562.683349609375,{'k': 6},spatial
+359349,how to find the midsegment of a trapezoid,2915.53125,{'k': 6},spatial
+390360,ia suffix meaning,2643.42333984375,{'k': 6},spatial
+405163,is caffeine an narcotic,2659.2919921875,{'k': 6},spatial
+405717,is cdg airport in main paris,2827.423828125,{'k': 6},spatial
+42255,average salary for dental hygienist in nebraska,2845.486328125,{'k': 6},spatial
+443396,lps laws definition,2529.409423828125,{'k': 6},spatial
+451602,medicare s definition of mechanical ventilation,2711.7841796875,{'k': 6},spatial
+47210,average wedding dress alteration cost,3175.904296875,{'k': 6},spatial
+47923,axon terminals or synaptic knob definition,2792.05126953125,{'k': 6},spatial
+489204,right pelvic pain causes,2713.545166015625,{'k': 6},spatial
+490595,rsa definition key,2768.692626953125,{'k': 6},spatial
+527433,types of dysarthria from cerebral palsy,2757.88134765625,{'k': 6},spatial
+555530,what are best foods to lower cholesterol,2750.785888671875,{'k': 6},spatial
+573724,what are the social determinants of health,2898.213623046875,{'k': 6},spatial
+583468,what carvedilol used for,3093.22314453125,{'k': 6},spatial
+640502,what does it mean if your tsh is low,2837.463623046875,{'k': 6},spatial
+67316,can fever cause miscarriage early pregnancy,2644.6826171875,{'k': 6},spatial
+673670,what is a alm,2726.249755859375,{'k': 6},spatial
+701453,what is a statutory deed,2850.56005859375,{'k': 6},spatial
+730539,what is chronometer who invented it,2702.1962890625,{'k': 6},spatial
+768208,what is mamey,2542.72802734375,{'k': 6},spatial
+833860,what is the most popular food in switzerland,2677.992431640625,{'k': 6},spatial
+855410,what is theraderm used for,2541.191162109375,{'k': 6},spatial
+87181,causes of left ventricular hypertrophy,2814.73388671875,{'k': 6},spatial
+87452,causes of military suicide,2876.4140625,{'k': 6},spatial
+877809,what metal are hip replacements made of,2771.3525390625,{'k': 6},spatial
+911232,what type of conflict does della face in o henry the gift of the magi,2594.314453125,{'k': 6},spatial
+914916,what type of tissue are bronchioles,2745.171875,{'k': 6},spatial
+915593,what types of food can you cook sous vide,2716.74560546875,{'k': 6},spatial
+938400,when did family feud come out,2721.110107421875,{'k': 6},spatial
+940547,when did rock n roll begin,2744.274658203125,{'k': 6},spatial
+962179,when was the salvation army founded,2712.777099609375,{'k': 6},spatial
+997622,where is the show shameless filmed,2733.688720703125,{'k': 6},spatial
+1030303,who is aziz hashim,1.0996375173392239,"{'k': 50, 'ratio': 0.1}",a_ratio
+1037496,who is rep scalise,1.0755036330013208,"{'k': 50, 'ratio': 0.1}",a_ratio
+1037798,who is robert gray,1.045475978713993,"{'k': 50, 'ratio': 0.1}",a_ratio
+1043135,who killed nicholas ii of russia,1.0149321096295538,"{'k': 50, 'ratio': 0.1}",a_ratio
+104861,cost of interior concrete flooring,1.0163502853125022,"{'k': 50, 'ratio': 0.1}",a_ratio
+1051399,who sings monk theme song,1.1025740662889598,"{'k': 50, 'ratio': 0.1}",a_ratio
+1063750,why did the us volunterilay enter ww1,1.0616479747076388,"{'k': 50, 'ratio': 0.1}",a_ratio
+1064670,why do hunters pattern their shotguns,1.116368940523146,"{'k': 50, 'ratio': 0.1}",a_ratio
+1071750,why is pete rose banned from hall of fame,1.0800685594936486,"{'k': 50, 'ratio': 0.1}",a_ratio
+1103812,who formed the commonwealth of independent states,1.1041908802494809,"{'k': 50, 'ratio': 0.1}",a_ratio
+1105792,define geon,1.1324074098180485,"{'k': 50, 'ratio': 0.1}",a_ratio
+1106007,define visceral,1.086911663325652,"{'k': 50, 'ratio': 0.1}",a_ratio
+1106979,define pareto chart in statistics,1.1110070326626134,"{'k': 50, 'ratio': 0.1}",a_ratio
+1108651,what the best way to get clothes white,1.052705185840953,"{'k': 50, 'ratio': 0.1}",a_ratio
+1109707,what medium do radio waves travel through,1.0274434053523533,"{'k': 50, 'ratio': 0.1}",a_ratio
+1110199,what is wifi vs bluetooth,1.0553688169567215,"{'k': 50, 'ratio': 0.1}",a_ratio
+1110678,what is the un fao,1.0992276634048126,"{'k': 50, 'ratio': 0.1}",a_ratio
+1112341,what is the daily life of thai people,1.0674491798211376,"{'k': 50, 'ratio': 0.1}",a_ratio
+1113256,what is reba mcentire s net worth,1.1821376463458169,"{'k': 50, 'ratio': 0.1}",a_ratio
+1113437,what is physical description of spruce,1.0349803367065182,"{'k': 50, 'ratio': 0.1}",a_ratio
+1114646,what is famvir prescribed for,1.0875406409582624,"{'k': 50, 'ratio': 0.1}",a_ratio
+1114819,what is durable medical equipment consist of,1.024174207159223,"{'k': 50, 'ratio': 0.1}",a_ratio
+1115210,what is chaff and flare,1.0606457348866256,"{'k': 50, 'ratio': 0.1}",a_ratio
+1115776,what is an aml surveillance analyst,1.1036018536164252,"{'k': 50, 'ratio': 0.1}",a_ratio
+1116380,what is a nonconformity earth science,1.035855273617946,"{'k': 50, 'ratio': 0.1}",a_ratio
+1117099,what is a active margin,1.0646634833402853,"{'k': 50, 'ratio': 0.1}",a_ratio
+1121353,what can you do about discrimination in the workplace in oklahoma city,1.0345062170435964,"{'k': 50, 'ratio': 0.1}",a_ratio
+1121402,what can contour plowing reduce,1.085244844700521,"{'k': 50, 'ratio': 0.1}",a_ratio
+1121709,what are the three percenters,1.1210478512237425,"{'k': 50, 'ratio': 0.1}",a_ratio
+1122767,what amino produces carnitine,1.0417982775690708,"{'k': 50, 'ratio': 0.1}",a_ratio
+1124210,tracheids are part of,1.0138089311309912,"{'k': 50, 'ratio': 0.1}",a_ratio
+1127540,meaning of shebang,1.1758294235174422,"{'k': 50, 'ratio': 0.1}",a_ratio
+1129237,hydrogen is a liquid below what temperature,1.0547300420886483,"{'k': 50, 'ratio': 0.1}",a_ratio
+1131069,how many sons robert kraft has,1.0598878255753261,"{'k': 50, 'ratio': 0.1}",a_ratio
+1132532,average annual income data analyst,1.0373357791648243,"{'k': 50, 'ratio': 0.1}",a_ratio
+1133167,how is the weather in jamaica,1.0357538553499281,"{'k': 50, 'ratio': 0.1}",a_ratio
+1133579,how does granulation tissue start,1.0131172917322917,"{'k': 50, 'ratio': 0.1}",a_ratio
+1136043,difference between a hotel and motel,1.0836540741932974,"{'k': 50, 'ratio': 0.1}",a_ratio
+1136047,difference between a company s strategy and business model is,1.0818188765739185,"{'k': 50, 'ratio': 0.1}",a_ratio
+1136962,why did the ancient egyptians call their land kemet or black land,1.112391516743333,"{'k': 50, 'ratio': 0.1}",a_ratio
+118440,define bmt medical,1.074009371523805,"{'k': 50, 'ratio': 0.1}",a_ratio
+121171,define etruscans,1.0398496392145047,"{'k': 50, 'ratio': 0.1}",a_ratio
+130510,definition declaratory judgment,1.1405744751870688,"{'k': 50, 'ratio': 0.1}",a_ratio
+131843,definition of a sigmet,1.11543493658309,"{'k': 50, 'ratio': 0.1}",a_ratio
+135802,definition of laudable,1.1445751082949223,"{'k': 50, 'ratio': 0.1}",a_ratio
+141630,describe how muscles and bones work together to produce movement,1.0287355413481043,"{'k': 50, 'ratio': 0.1}",a_ratio
+146187,difference between a mcdouble and a double cheeseburger,1.0839145475253051,"{'k': 50, 'ratio': 0.1}",a_ratio
+148538,difference between rn and bsn,1.0405866698055135,"{'k': 50, 'ratio': 0.1}",a_ratio
+156493,do goldfish grow,1.044744235658679,"{'k': 50, 'ratio': 0.1}",a_ratio
+156498,do google docs auto save,1.0592674469248478,"{'k': 50, 'ratio': 0.1}",a_ratio
+168216,does legionella pneumophila cause pneumonia,1.0307305490037852,"{'k': 50, 'ratio': 0.1}",a_ratio
+169208,does mississippi have an income tax,1.0535398560217457,"{'k': 50, 'ratio': 0.1}",a_ratio
+174463,dog day afternoon meaning,1.0465450413064237,"{'k': 50, 'ratio': 0.1}",a_ratio
+182539,example of monotonic function,1.0778351439229241,"{'k': 50, 'ratio': 0.1}",a_ratio
+183378,exons definition biology,1.0572795500135423,"{'k': 50, 'ratio': 0.1}",a_ratio
+19335,anthropological definition of environment,1.0411556938576565,"{'k': 50, 'ratio': 0.1}",a_ratio
+207786,how are some sharks warm blooded,1.0744566682948986,"{'k': 50, 'ratio': 0.1}",a_ratio
+23849,are naturalization records public information,1.0333958678083432,"{'k': 50, 'ratio': 0.1}",a_ratio
+258062,how long does it take to remove wisdom tooth,1.0259664975062446,"{'k': 50, 'ratio': 0.1}",a_ratio
+264014,how long is life cycle of flea,1.033657791904814,"{'k': 50, 'ratio': 0.1}",a_ratio
+324585,how much money do motivational speakers make,1.1177519868597958,"{'k': 50, 'ratio': 0.1}",a_ratio
+330975,how much would it cost to install my own wind turbine,1.0111539917400554,"{'k': 50, 'ratio': 0.1}",a_ratio
+332593,how often to button quail lay eggs,1.0388346190156428,"{'k': 50, 'ratio': 0.1}",a_ratio
+336901,how old is vanessa redgrave,1.0753839994024736,"{'k': 50, 'ratio': 0.1}",a_ratio
+359349,how to find the midsegment of a trapezoid,1.0825868256021185,"{'k': 50, 'ratio': 0.1}",a_ratio
+390360,ia suffix meaning,1.0756462110876701,"{'k': 50, 'ratio': 0.1}",a_ratio
+405163,is caffeine an narcotic,1.027368025973318,"{'k': 50, 'ratio': 0.1}",a_ratio
+405717,is cdg airport in main paris,1.0494982399675996,"{'k': 50, 'ratio': 0.1}",a_ratio
+42255,average salary for dental hygienist in nebraska,1.0554742532643835,"{'k': 50, 'ratio': 0.1}",a_ratio
+443396,lps laws definition,1.042250483611738,"{'k': 50, 'ratio': 0.1}",a_ratio
+451602,medicare s definition of mechanical ventilation,1.0505477777607513,"{'k': 50, 'ratio': 0.1}",a_ratio
+47210,average wedding dress alteration cost,1.0559938917029996,"{'k': 50, 'ratio': 0.1}",a_ratio
+47923,axon terminals or synaptic knob definition,1.0501750172762239,"{'k': 50, 'ratio': 0.1}",a_ratio
+489204,right pelvic pain causes,1.0139722151088344,"{'k': 50, 'ratio': 0.1}",a_ratio
+490595,rsa definition key,1.054694643846482,"{'k': 50, 'ratio': 0.1}",a_ratio
+527433,types of dysarthria from cerebral palsy,1.044992758184631,"{'k': 50, 'ratio': 0.1}",a_ratio
+555530,what are best foods to lower cholesterol,1.0237628475700284,"{'k': 50, 'ratio': 0.1}",a_ratio
+573724,what are the social determinants of health,1.0383592882599462,"{'k': 50, 'ratio': 0.1}",a_ratio
+583468,what carvedilol used for,1.0451506368749834,"{'k': 50, 'ratio': 0.1}",a_ratio
+640502,what does it mean if your tsh is low,1.0303114054660816,"{'k': 50, 'ratio': 0.1}",a_ratio
+67316,can fever cause miscarriage early pregnancy,1.0158575914677648,"{'k': 50, 'ratio': 0.1}",a_ratio
+673670,what is a alm,1.0796859250108313,"{'k': 50, 'ratio': 0.1}",a_ratio
+701453,what is a statutory deed,1.0826336519171833,"{'k': 50, 'ratio': 0.1}",a_ratio
+730539,what is chronometer who invented it,1.0700182569714258,"{'k': 50, 'ratio': 0.1}",a_ratio
+768208,what is mamey,1.094366412540269,"{'k': 50, 'ratio': 0.1}",a_ratio
+833860,what is the most popular food in switzerland,1.0730187634344652,"{'k': 50, 'ratio': 0.1}",a_ratio
+855410,what is theraderm used for,1.024255622105042,"{'k': 50, 'ratio': 0.1}",a_ratio
+87181,causes of left ventricular hypertrophy,1.0421283574596583,"{'k': 50, 'ratio': 0.1}",a_ratio
+87452,causes of military suicide,1.0587510269848894,"{'k': 50, 'ratio': 0.1}",a_ratio
+877809,what metal are hip replacements made of,1.0693848516203748,"{'k': 50, 'ratio': 0.1}",a_ratio
+911232,what type of conflict does della face in o henry the gift of the magi,1.112631620278821,"{'k': 50, 'ratio': 0.1}",a_ratio
+914916,what type of tissue are bronchioles,1.01606923626273,"{'k': 50, 'ratio': 0.1}",a_ratio
+915593,what types of food can you cook sous vide,1.031612477700349,"{'k': 50, 'ratio': 0.1}",a_ratio
+938400,when did family feud come out,1.0555427029396887,"{'k': 50, 'ratio': 0.1}",a_ratio
+940547,when did rock n roll begin,1.0586885331866407,"{'k': 50, 'ratio': 0.1}",a_ratio
+962179,when was the salvation army founded,1.0907788409973473,"{'k': 50, 'ratio': 0.1}",a_ratio
+997622,where is the show shameless filmed,1.0804312788812638,"{'k': 50, 'ratio': 0.1}",a_ratio
+156493,do goldfish grow,0.5139036178588867,{'encoder': 'bert-base-uncased'},bertQPP
+1110199,what is wifi vs bluetooth,0.10523062199354172,{'encoder': 'bert-base-uncased'},bertQPP
+1063750,why did the us volunterilay enter ww1,0.10043543577194214,{'encoder': 'bert-base-uncased'},bertQPP
+130510,definition declaratory judgment,0.2858879566192627,{'encoder': 'bert-base-uncased'},bertQPP
+489204,right pelvic pain causes,0.04083330184221268,{'encoder': 'bert-base-uncased'},bertQPP
+573724,what are the social determinants of health,0.5931978821754456,{'encoder': 'bert-base-uncased'},bertQPP
+168216,does legionella pneumophila cause pneumonia,0.19809174537658691,{'encoder': 'bert-base-uncased'},bertQPP
+1133167,how is the weather in jamaica,0.18224498629570007,{'encoder': 'bert-base-uncased'},bertQPP
+527433,types of dysarthria from cerebral palsy,0.5788417458534241,{'encoder': 'bert-base-uncased'},bertQPP
+1037798,who is robert gray,0.3193971514701843,{'encoder': 'bert-base-uncased'},bertQPP
+915593,what types of food can you cook sous vide,0.4477051794528961,{'encoder': 'bert-base-uncased'},bertQPP
+264014,how long is life cycle of flea,0.3388628363609314,{'encoder': 'bert-base-uncased'},bertQPP
+1121402,what can contour plowing reduce,0.40259677171707153,{'encoder': 'bert-base-uncased'},bertQPP
+962179,when was the salvation army founded,0.4302627742290497,{'encoder': 'bert-base-uncased'},bertQPP
+1117099,what is a active margin,0.44164320826530457,{'encoder': 'bert-base-uncased'},bertQPP
+148538,difference between rn and bsn,0.27756351232528687,{'encoder': 'bert-base-uncased'},bertQPP
+451602,medicare s definition of mechanical ventilation,0.08013182878494263,{'encoder': 'bert-base-uncased'},bertQPP
+359349,how to find the midsegment of a trapezoid,0.22793787717819214,{'encoder': 'bert-base-uncased'},bertQPP
+1115776,what is an aml surveillance analyst,0.6067172288894653,{'encoder': 'bert-base-uncased'},bertQPP
+1112341,what is the daily life of thai people,0.24556562304496765,{'encoder': 'bert-base-uncased'},bertQPP
+131843,definition of a sigmet,0.5237542390823364,{'encoder': 'bert-base-uncased'},bertQPP
+104861,cost of interior concrete flooring,0.031655896455049515,{'encoder': 'bert-base-uncased'},bertQPP
+833860,what is the most popular food in switzerland,0.1105644628405571,{'encoder': 'bert-base-uncased'},bertQPP
+207786,how are some sharks warm blooded,0.4252777099609375,{'encoder': 'bert-base-uncased'},bertQPP
+1114819,what is durable medical equipment consist of,0.4453091025352478,{'encoder': 'bert-base-uncased'},bertQPP
+183378,exons definition biology,0.14835353195667267,{'encoder': 'bert-base-uncased'},bertQPP
+1106007,define visceral,0.15044568479061127,{'encoder': 'bert-base-uncased'},bertQPP
+1124210,tracheids are part of,0.14816713333129883,{'encoder': 'bert-base-uncased'},bertQPP
+490595,rsa definition key,0.19032159447669983,{'encoder': 'bert-base-uncased'},bertQPP
+1103812,who formed the commonwealth of independent states,0.1308525651693344,{'encoder': 'bert-base-uncased'},bertQPP
+87181,causes of left ventricular hypertrophy,0.28461211919784546,{'encoder': 'bert-base-uncased'},bertQPP
+443396,lps laws definition,0.5307888388633728,{'encoder': 'bert-base-uncased'},bertQPP
+1121709,what are the three percenters,0.5723785161972046,{'encoder': 'bert-base-uncased'},bertQPP
+87452,causes of military suicide,0.22813482582569122,{'encoder': 'bert-base-uncased'},bertQPP
+855410,what is theraderm used for,0.6681010127067566,{'encoder': 'bert-base-uncased'},bertQPP
+1114646,what is famvir prescribed for,0.17188586294651031,{'encoder': 'bert-base-uncased'},bertQPP
+19335,anthropological definition of environment,0.140602707862854,{'encoder': 'bert-base-uncased'},bertQPP
+47923,axon terminals or synaptic knob definition,0.2955823838710785,{'encoder': 'bert-base-uncased'},bertQPP
+405717,is cdg airport in main paris,0.4465184509754181,{'encoder': 'bert-base-uncased'},bertQPP
+182539,example of monotonic function,0.27313435077667236,{'encoder': 'bert-base-uncased'},bertQPP
+1113437,what is physical description of spruce,0.049558546394109726,{'encoder': 'bert-base-uncased'},bertQPP
+1129237,hydrogen is a liquid below what temperature,0.47437477111816406,{'encoder': 'bert-base-uncased'},bertQPP
+146187,difference between a mcdouble and a double cheeseburger,0.4069857597351074,{'encoder': 'bert-base-uncased'},bertQPP
+1030303,who is aziz hashim,0.7650376558303833,{'encoder': 'bert-base-uncased'},bertQPP
+1037496,who is rep scalise,0.45716592669487,{'encoder': 'bert-base-uncased'},bertQPP
+1043135,who killed nicholas ii of russia,0.19148290157318115,{'encoder': 'bert-base-uncased'},bertQPP
+1051399,who sings monk theme song,0.4374917149543762,{'encoder': 'bert-base-uncased'},bertQPP
+1064670,why do hunters pattern their shotguns,0.6862454414367676,{'encoder': 'bert-base-uncased'},bertQPP
+1071750,why is pete rose banned from hall of fame,0.5708326697349548,{'encoder': 'bert-base-uncased'},bertQPP
+1105792,define geon,0.14426986873149872,{'encoder': 'bert-base-uncased'},bertQPP
+1106979,define pareto chart in statistics,0.21439515054225922,{'encoder': 'bert-base-uncased'},bertQPP
+1108651,what the best way to get clothes white,0.2997885048389435,{'encoder': 'bert-base-uncased'},bertQPP
+1109707,what medium do radio waves travel through,0.12830878794193268,{'encoder': 'bert-base-uncased'},bertQPP
+1110678,what is the un fao,0.3740047514438629,{'encoder': 'bert-base-uncased'},bertQPP
+1113256,what is reba mcentire s net worth,0.5405383110046387,{'encoder': 'bert-base-uncased'},bertQPP
+1115210,what is chaff and flare,0.4715038537979126,{'encoder': 'bert-base-uncased'},bertQPP
+1116380,what is a nonconformity earth science,0.14287199079990387,{'encoder': 'bert-base-uncased'},bertQPP
+1121353,what can you do about discrimination in the workplace in oklahoma city,0.23269246518611908,{'encoder': 'bert-base-uncased'},bertQPP
+1122767,what amino produces carnitine,0.06980729103088379,{'encoder': 'bert-base-uncased'},bertQPP
+1127540,meaning of shebang,0.3424549996852875,{'encoder': 'bert-base-uncased'},bertQPP
+1131069,how many sons robert kraft has,0.43100613355636597,{'encoder': 'bert-base-uncased'},bertQPP
+1132532,average annual income data analyst,0.061233412474393845,{'encoder': 'bert-base-uncased'},bertQPP
+1133579,how does granulation tissue start,0.10133198648691177,{'encoder': 'bert-base-uncased'},bertQPP
+1136043,difference between a hotel and motel,0.4338894188404083,{'encoder': 'bert-base-uncased'},bertQPP
+1136047,difference between a company s strategy and business model is,0.3308747112751007,{'encoder': 'bert-base-uncased'},bertQPP
+1136962,why did the ancient egyptians call their land kemet or black land,0.4836660921573639,{'encoder': 'bert-base-uncased'},bertQPP
+118440,define bmt medical,0.28224799036979675,{'encoder': 'bert-base-uncased'},bertQPP
+121171,define etruscans,0.22090096771717072,{'encoder': 'bert-base-uncased'},bertQPP
+135802,definition of laudable,0.6349422335624695,{'encoder': 'bert-base-uncased'},bertQPP
+141630,describe how muscles and bones work together to produce movement,0.036281805485486984,{'encoder': 'bert-base-uncased'},bertQPP
+156498,do google docs auto save,0.24503503739833832,{'encoder': 'bert-base-uncased'},bertQPP
+169208,does mississippi have an income tax,0.3233531415462494,{'encoder': 'bert-base-uncased'},bertQPP
+174463,dog day afternoon meaning,0.2684333622455597,{'encoder': 'bert-base-uncased'},bertQPP
+23849,are naturalization records public information,0.2428264021873474,{'encoder': 'bert-base-uncased'},bertQPP
+258062,how long does it take to remove wisdom tooth,0.2749065160751343,{'encoder': 'bert-base-uncased'},bertQPP
+324585,how much money do motivational speakers make,0.3435422480106354,{'encoder': 'bert-base-uncased'},bertQPP
+330975,how much would it cost to install my own wind turbine,0.06045294925570488,{'encoder': 'bert-base-uncased'},bertQPP
+332593,how often to button quail lay eggs,0.29204678535461426,{'encoder': 'bert-base-uncased'},bertQPP
+336901,how old is vanessa redgrave,0.4408283829689026,{'encoder': 'bert-base-uncased'},bertQPP
+390360,ia suffix meaning,0.28604987263679504,{'encoder': 'bert-base-uncased'},bertQPP
+405163,is caffeine an narcotic,0.07575701922178268,{'encoder': 'bert-base-uncased'},bertQPP
+42255,average salary for dental hygienist in nebraska,0.687330961227417,{'encoder': 'bert-base-uncased'},bertQPP
+47210,average wedding dress alteration cost,0.3444805443286896,{'encoder': 'bert-base-uncased'},bertQPP
+555530,what are best foods to lower cholesterol,0.18034103512763977,{'encoder': 'bert-base-uncased'},bertQPP
+583468,what carvedilol used for,0.4190814197063446,{'encoder': 'bert-base-uncased'},bertQPP
+640502,what does it mean if your tsh is low,0.027345893904566765,{'encoder': 'bert-base-uncased'},bertQPP
+67316,can fever cause miscarriage early pregnancy,0.2679649293422699,{'encoder': 'bert-base-uncased'},bertQPP
+673670,what is a alm,0.5141821503639221,{'encoder': 'bert-base-uncased'},bertQPP
+701453,what is a statutory deed,0.26200762391090393,{'encoder': 'bert-base-uncased'},bertQPP
+730539,what is chronometer who invented it,0.21780052781105042,{'encoder': 'bert-base-uncased'},bertQPP
+768208,what is mamey,0.3070850670337677,{'encoder': 'bert-base-uncased'},bertQPP
+877809,what metal are hip replacements made of,0.1792726069688797,{'encoder': 'bert-base-uncased'},bertQPP
+911232,what type of conflict does della face in o henry the gift of the magi,0.2882017493247986,{'encoder': 'bert-base-uncased'},bertQPP
+914916,what type of tissue are bronchioles,0.04075257107615471,{'encoder': 'bert-base-uncased'},bertQPP
+938400,when did family feud come out,0.08375240862369537,{'encoder': 'bert-base-uncased'},bertQPP
+940547,when did rock n roll begin,0.15389615297317505,{'encoder': 'bert-base-uncased'},bertQPP
+997622,where is the show shameless filmed,0.25929221510887146,{'encoder': 'bert-base-uncased'},bertQPP
+156493,do goldfish grow,0.43450024724006653,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1110199,what is wifi vs bluetooth,0.08595158159732819,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1063750,why did the us volunterilay enter ww1,0.14861424267292023,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+130510,definition declaratory judgment,0.3449646234512329,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+489204,right pelvic pain causes,0.03144608810544014,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+573724,what are the social determinants of health,0.346004456281662,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+168216,does legionella pneumophila cause pneumonia,0.16007235646247864,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1133167,how is the weather in jamaica,0.16886702179908752,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+527433,types of dysarthria from cerebral palsy,0.6471169590950012,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1037798,who is robert gray,0.5949751138687134,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+915593,what types of food can you cook sous vide,0.39006614685058594,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+264014,how long is life cycle of flea,0.15246260166168213,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1121402,what can contour plowing reduce,0.374876469373703,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+962179,when was the salvation army founded,0.5279636383056641,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1117099,what is a active margin,0.4147595465183258,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+148538,difference between rn and bsn,0.37283462285995483,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+451602,medicare s definition of mechanical ventilation,0.08192070573568344,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+359349,how to find the midsegment of a trapezoid,0.16526348888874054,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1115776,what is an aml surveillance analyst,0.5424877405166626,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1112341,what is the daily life of thai people,0.3044528067111969,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+131843,definition of a sigmet,0.39619746804237366,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+104861,cost of interior concrete flooring,0.041708264499902725,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+833860,what is the most popular food in switzerland,0.2129199504852295,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+207786,how are some sharks warm blooded,0.3383607268333435,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1114819,what is durable medical equipment consist of,0.4739791452884674,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+183378,exons definition biology,0.12460384517908096,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1106007,define visceral,0.18390506505966187,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1124210,tracheids are part of,0.10174814611673355,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+490595,rsa definition key,0.27709364891052246,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1103812,who formed the commonwealth of independent states,0.21524320542812347,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+87181,causes of left ventricular hypertrophy,0.3193990886211395,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+443396,lps laws definition,0.3942534625530243,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1121709,what are the three percenters,0.7047017812728882,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+87452,causes of military suicide,0.37280982732772827,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+855410,what is theraderm used for,0.6914563179016113,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1114646,what is famvir prescribed for,0.23825514316558838,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+19335,anthropological definition of environment,0.17969638109207153,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+47923,axon terminals or synaptic knob definition,0.28496086597442627,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+405717,is cdg airport in main paris,0.6564350128173828,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+182539,example of monotonic function,0.2793216407299042,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1113437,what is physical description of spruce,0.05689751356840134,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1129237,hydrogen is a liquid below what temperature,0.4136316180229187,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+146187,difference between a mcdouble and a double cheeseburger,0.3882885277271271,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1030303,who is aziz hashim,0.7705914974212646,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1037496,who is rep scalise,0.21485845744609833,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1043135,who killed nicholas ii of russia,0.22147317230701447,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1051399,who sings monk theme song,0.43610304594039917,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1064670,why do hunters pattern their shotguns,0.6206328272819519,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1071750,why is pete rose banned from hall of fame,0.4928399920463562,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1105792,define geon,0.1975933164358139,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1106979,define pareto chart in statistics,0.25643783807754517,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1108651,what the best way to get clothes white,0.339449942111969,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1109707,what medium do radio waves travel through,0.10924109816551208,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1110678,what is the un fao,0.3220718801021576,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1113256,what is reba mcentire s net worth,0.5451794862747192,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1115210,what is chaff and flare,0.36899667978286743,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1116380,what is a nonconformity earth science,0.32172513008117676,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1121353,what can you do about discrimination in the workplace in oklahoma city,0.22167782485485077,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1122767,what amino produces carnitine,0.04576130956411362,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1127540,meaning of shebang,0.20406083762645721,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1131069,how many sons robert kraft has,0.506649374961853,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1132532,average annual income data analyst,0.060027554631233215,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1133579,how does granulation tissue start,0.08493537455797195,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1136043,difference between a hotel and motel,0.5421391725540161,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1136047,difference between a company s strategy and business model is,0.38151615858078003,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+1136962,why did the ancient egyptians call their land kemet or black land,0.4519175887107849,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+118440,define bmt medical,0.17416955530643463,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+121171,define etruscans,0.0997825413942337,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+135802,definition of laudable,0.6494547724723816,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+141630,describe how muscles and bones work together to produce movement,0.030618926510214806,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+156498,do google docs auto save,0.24435780942440033,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+169208,does mississippi have an income tax,0.31876614689826965,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+174463,dog day afternoon meaning,0.25615280866622925,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+23849,are naturalization records public information,0.3113544285297394,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+258062,how long does it take to remove wisdom tooth,0.21698394417762756,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+324585,how much money do motivational speakers make,0.24614326655864716,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+330975,how much would it cost to install my own wind turbine,0.04933972284197807,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+332593,how often to button quail lay eggs,0.2785642743110657,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+336901,how old is vanessa redgrave,0.47507143020629883,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+390360,ia suffix meaning,0.27623215317726135,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+405163,is caffeine an narcotic,0.10414745658636093,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+42255,average salary for dental hygienist in nebraska,0.6846534609794617,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+47210,average wedding dress alteration cost,0.26831135153770447,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+555530,what are best foods to lower cholesterol,0.24097755551338196,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+583468,what carvedilol used for,0.43099501729011536,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+640502,what does it mean if your tsh is low,0.020690439268946648,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+67316,can fever cause miscarriage early pregnancy,0.1317257434129715,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+673670,what is a alm,0.4987833499908447,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+701453,what is a statutory deed,0.3175223469734192,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+730539,what is chronometer who invented it,0.22550885379314423,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+768208,what is mamey,0.215391606092453,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+877809,what metal are hip replacements made of,0.1438068449497223,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+911232,what type of conflict does della face in o henry the gift of the magi,0.2951461970806122,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+914916,what type of tissue are bronchioles,0.058931171894073486,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+938400,when did family feud come out,0.12142463028430939,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+940547,when did rock n roll begin,0.07764372229576111,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)
+997622,where is the show shameless filmed,0.29942724108695984,"{'encoder': 'bert-base-uncased', 'k': 1}",bertQPP(QV)

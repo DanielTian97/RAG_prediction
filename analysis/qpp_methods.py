@@ -8,14 +8,14 @@ class QPP:
     def __init__(self, task='dl'):
         if not pt.started():
             pt.java.init()
-        if(task=='dl'):
+        if(task in ['dl', 'dev_small']):
             index_path ='/mnt/indices/msmarco-passage.terrier/'
             index_ref = pt.IndexRef.of(index_path)
             self.index = pt.IndexFactory.of(index_ref)
             self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()
-        elif(task=='nq_test'):
+        elif(task in ['nq_test', 'nq_dev']):
             self.index = pt.IndexFactory.of('/mnt/indices/BEIR/nq/nq_sparseIndex')
-            self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()            
+            self.DOC_NUM = self.index.getCollectionStatistics().getNumberOfDocuments()          
 
     def get_max_idf_query(self, qid, q_df):
         stemmer = pt.TerrierStemmer.porter
@@ -101,15 +101,18 @@ class QPP:
     def qpp_in_batch(self, res, qpp_method, _k, q_encoder=0, _index=0):
 
         if(qpp_method == 'spatial'):
-            qpp_df = res.groupby(['qid']).apply(lambda x: self.spatial_qpp(x, _k, q_encoder, _index)).reset_index(name='qpp_estimate')
+            qpp_df = res.groupby(['qid', 'query']).apply(lambda x: self.spatial_qpp(x, _k, q_encoder, _index)).reset_index(name='qpp_estimate')
             qpp_df['parameters'] = str({'k': _k})
         elif(qpp_method == 'a_ratio'):
             _k = 50
-            qpp_df = res.groupby(['qid']).apply(lambda x: self.a_ratio(x, _k, q_encoder, _index)).reset_index(name='qpp_estimate')
+            qpp_df = res.groupby(['qid', 'query']).apply(lambda x: self.a_ratio(x, _k, q_encoder, _index)).reset_index(name='qpp_estimate')
             qpp_df['parameters'] = str({'k': _k, 'ratio': 0.1})
         elif(qpp_method == 'nqc'):
-            qpp_df = res.groupby(['qid']).apply(lambda x: self.nqc(x, _k)).reset_index(name='qpp_estimate')
+            qpp_df = res.groupby(['qid', 'query']).apply(lambda x: self.nqc(x, _k)).reset_index(name='qpp_estimate')
             qpp_df['parameters'] = str({'k': _k})
+        elif(qpp_method == 'maxScore'):
+            qpp_df = res.groupby(['qid', 'query']).apply(lambda x: self.max_score(x)).reset_index(name='qpp_estimate')
+            qpp_df['parameters'] = str({'position': 0})
         qpp_df['qpp_method'] = qpp_method
         return qpp_df
 
@@ -170,3 +173,7 @@ class QPP:
         max_idf = self.get_max_idf_query(qid, queries)
         nqc = var_value * max_idf
         return nqc
+
+    def max_score(self, group):
+        top_value = group[group['rank']==0].score.values[0]
+        return top_value

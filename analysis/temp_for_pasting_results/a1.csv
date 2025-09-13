@@ -1,0 +1,11 @@
+QPP_Method,Spearman,Kendall
+nqc,0.1606,0.1214
+maxScore,0.2233,0.1684
+denseQPP,0.1913,0.1439
+aPairRatio,0.2281,0.1734
+bertQPP,0.1446,0.109
+perpC,0.1522,0.1147
+max(docQual),0.1024,0.0785
+avg(docQual),0.1134,0.0859
+itg(docQual),0.0245,0.0186
+prob(k),0.2919,0.2206
