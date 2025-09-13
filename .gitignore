@@ -4,5 +4,6 @@ coherence_eval/coherence_res/*/*.pkl
 coherence_eval/log_prob_temp_res/*.json
 qualt5_eval/quality_res/*.csv
 readability_eval/readability_res/*.csv
+readability_eval/readability_res/*.pkl
 analysis/retr_res/*.csv
 *.ipynb_checkpoints
