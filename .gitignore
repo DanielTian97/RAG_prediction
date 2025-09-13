@@ -1,8 +1,8 @@
-coherence_eval/coherence_res/*.pkl
-coherence_eval/coherence_res/*/*.pkl
+coherence_eval/coherence_res/*
+coherence_eval/coherence_res/*/*
 *model.safetensors
 coherence_eval/log_prob_temp_res
-qualt5_eval/quality_res/*.csv
-readability_eval/readability_res/*.csv
-analysis/retr_res/*.csv
+qualt5_eval/quality_res/*
+readability_eval/readability_res/*
+analysis/retr_res/*
 *.ipynb_checkpoints
