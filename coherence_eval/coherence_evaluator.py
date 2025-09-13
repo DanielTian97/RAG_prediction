@@ -30,7 +30,7 @@ if __name__=="__main__":
     _ret = args.retriever
     _k = args.k
     _task = args.task
-    _output_path = f'../coherence_res/bi-directional/{_task}_{_k}_{_ret}.pkl'
+    _output_path = f'./coherence_res/bi-directional/{_task}_{_k}_{_ret}.pkl'
     
     judger = EntailmentDeberta()
 
