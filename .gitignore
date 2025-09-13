@@ -2,3 +2,4 @@ coherence_res/*.pkl
 coherence_res/*/*.pkl
 *model.safetensors
 coherence_eval/log_prob_temp_res
+*.json
