@@ -1,0 +1,1 @@
+Here stores context perplexity of individual documents conditioned on the query.
