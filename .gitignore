@@ -2,4 +2,5 @@ coherence_res/*.pkl
 coherence_res/*/*.pkl
 *model.safetensors
 coherence_eval/log_prob_temp_res
-*.csv
+qualt5_analysis/quality_res/*.csv
+readability_analysis/readability_res/*.csv
