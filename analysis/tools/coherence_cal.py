@@ -7,7 +7,8 @@ from memory_profiler import profile
 from tqdm import tqdm
 from collections import defaultdict
 
-@profile
+# enable @profile to print memory consumption
+# @profile
 def cal_coherence(_matrix, _k, _doc_length_dict, _window=0, _step=1, bidirectional=0, distribution='uniform'): # 0 for document average, no overlaping # bidirectional: 0: upper; 1: lower; 2:bidirectional
     _coh_dict = {}
         
@@ -52,7 +53,7 @@ def cal_coherence(_matrix, _k, _doc_length_dict, _window=0, _step=1, bidirection
 
     return _coh_dict
 
-@profile
+# @profile
 def get_res_and_dicts(_task, _ret):
     material_path = '../../rag_utility'
     splitter = SentenceSplitter(language='en')

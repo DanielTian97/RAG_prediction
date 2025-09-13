@@ -10,6 +10,7 @@ import math
 import torch.nn.functional as F
 from analysis.tools import coherence_cal
 import json
+import numpy as np
 from tqdm import tqdm
 
 class ProbEstimator:
@@ -35,6 +36,20 @@ class ProbEstimator:
     def change_retriever(self, _new_ret):
         self.retriever = _new_ret
         self.res, self.doc_dict, _ = coherence_cal.get_res_and_dicts(self.task, _new_ret)
+
+    def get_average_log_probs(self, _logits, _input_ids, _attention_mask):
+        shift_logits = _logits[: , :-1, :].contiguous()
+        shift_labels = _input_ids[:, 1:].contiguous()
+            
+        log_probs = F.log_softmax(shift_logits, dim=-1)
+        log_probs_for_tokens = log_probs.gather(2, shift_labels.unsqueeze(-1)).squeeze(-1)
+        actual_log_probs_for_tokens = _attention_mask[:, 1:] * log_probs_for_tokens  # the first position is the beginning token
+            
+        actual_nums = _attention_mask[:, 1:].sum(dim=1)
+        actual_sums = actual_log_probs_for_tokens.sum(dim=1)
+        _avg_logProbs = actual_sums/actual_nums
+
+        return _avg_logProbs, actual_nums, actual_sums
     
     def cal_part_logprob_in_batch(self, _input_text: list, _device, _max_length=512):
         with torch.no_grad():
@@ -44,20 +59,13 @@ class ProbEstimator:
             logits = outputs.logits.to('cpu')
             del outputs
             inputs = inputs.to('cpu')
-            attention_mask = inputs["attention_mask"]
             input_ids = inputs["input_ids"]
+            attention_mask = inputs["attention_mask"]
             
-            shift_logits = logits[: , :-1, :].contiguous()
-            shift_labels = input_ids[:, 1:].contiguous()
-            
-            log_probs = F.log_softmax(shift_logits, dim=-1)
-            log_probs_for_tokens = log_probs.gather(2, shift_labels.unsqueeze(-1)).squeeze(-1)
-            actual_log_probs_for_tokens = attention_mask[:, 1:] * log_probs_for_tokens
-            
-            actual_nums = attention_mask[:, 1:].sum(dim=1)
-            actual_sums = actual_log_probs_for_tokens.sum(dim=1)
-            avg_logProbs = actual_sums/actual_nums
-        return avg_logProbs.tolist()
+            avg_logProbs, token_num, token_logprob_sum = self.get_average_log_probs(logits, input_ids, attention_mask)
+
+        torch.cuda.empty_cache()
+        return avg_logProbs.tolist(), token_num, token_logprob_sum
 
     def cal_part_logprob_in_batch_with_preamble(self, _input_text: list, _device, _max_length=512):
         with torch.no_grad():
@@ -67,23 +75,13 @@ class ProbEstimator:
             logits = outputs.logits.to('cpu')
             del outputs
             inputs = inputs.to('cpu')
-            attention_mask = inputs["attention_mask"]
-            
-            input_ids = inputs["input_ids"]
-            # print(input_ids.shape)
-    
-            attention_mask = torch.stack([attention_mask[0]] + [((1-attention_mask[0]) & _m) for _m in attention_mask[1:]]) # mask the query tokens for the later ones
-            
-            shift_logits = logits[: , :-1, :].contiguous()
-            shift_labels = input_ids[:, 1:].contiguous()
-            
-            log_probs = F.log_softmax(shift_logits, dim=-1)
-            log_probs_for_tokens = log_probs.gather(2, shift_labels.unsqueeze(-1)).squeeze(-1)
-            actual_log_probs_for_tokens = attention_mask[:, 1:] * log_probs_for_tokens  # the first position is the beginning token
 
-            actual_nums = attention_mask[:, 1:].sum(dim=1)
-            actual_sums = actual_log_probs_for_tokens.sum(dim=1)
-            avg_logProbs = actual_sums/actual_nums
+            input_ids = inputs["input_ids"]
+            attention_mask = inputs["attention_mask"]
+            attention_mask = torch.stack([attention_mask[0]] + [((1-attention_mask[0]) & _m) for _m in attention_mask[1:]]) # mask the query tokens for the later ones
+
+            avg_logProbs, _, _ = self.get_average_log_probs(logits, input_ids, attention_mask)
+            
         torch.cuda.empty_cache()
         return avg_logProbs.tolist()[1:]
     
@@ -109,7 +107,7 @@ class ProbEstimator:
                 doc_texts = self.res[(self.res.qid==qid)&(self.res['rank']>=_i)&(self.res['rank']<_i+_batch_size)].docno.apply(lambda x: self.doc_dict[str(x)]).tolist()
                 # _res_per_q = {} # mistake
 
-                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.device)
+                avg_logProb_list, _, _ = self.cal_part_logprob_in_batch(doc_texts, self.device)
                 torch.cuda.empty_cache()
                 _res_per_q.update(dict(zip(range(_i, _i+len(doc_texts)), avg_logProb_list)))
                 _i += _batch_size
@@ -174,8 +172,9 @@ class ProbEstimator:
         _max_tokens = 1024 + 256*max(0, _k-5)
         _batch_size = max(1, math.floor(5120/_max_tokens))
         _i = 0
-        doc_texts = []
-        _qid_to_write = []
+        doc_texts, _qid_to_write = [], []
+        print(f'The batch size is {_batch_size}')
+        
         for qid in tqdm(self.res.qid.unique()):
             if(qid in prob_res.keys()):
                 continue
@@ -185,11 +184,10 @@ class ProbEstimator:
             _i += 1
             
             if ((_i == _batch_size)|(qid == self.res.qid.unique()[-1])):
-                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.device, _max_tokens)
+                avg_logProb_list, _, _ = self.cal_part_logprob_in_batch(doc_texts, self.device, _max_tokens)
                 torch.cuda.empty_cache()
                 prob_res.update(dict(zip(_qid_to_write, avg_logProb_list)))
-                _qid_to_write = []
-                doc_texts = []
+                doc_texts, _qid_to_write = [], []
                 _i = 0
                 
                 f = open(output_path, 'w')
@@ -198,7 +196,8 @@ class ProbEstimator:
 
     def concatenated_context_probs_with_query(self, _k: int):
         prob_res = {}
-        output_path = f'./log_prob_temp_res/full_context/{self.task}_{self.retriever}_{_k}.json'
+        output_path = f'./log_prob_temp_res/full_context_with_query/{self.task}_{self.retriever}_{_k}.json'
+        print(output_path)
         
         try:
             f = open(output_path, 'r')
@@ -210,22 +209,28 @@ class ProbEstimator:
         _max_tokens = 1024 + 256*max(0, _k-5)
         _batch_size = max(1, math.floor(5120/_max_tokens))
         _i = 0
-        doc_texts = []
-        _qid_to_write = []
+        print(f'The batch size is {_batch_size}')
+        
+        query_texts, doc_texts, _qid_to_write = [], [], []
         for qid in tqdm(self.res.qid.unique()):
             if(qid in prob_res.keys()):
                 continue
+            query_text = self.res[self.res.qid==qid]['query'].values[0]
             doc_text = ''.join(self.res[(self.res.qid==qid)&(self.res['rank']<_k)].docno.apply(lambda x: self.doc_dict[str(x)]).tolist())
-            doc_texts.append(doc_text)
+
+            query_texts.append(f'Q: {query_text}\nA: ')
+            doc_texts.append(f'Q: {query_text}\nA: {doc_text}')
             _qid_to_write.append(qid)
+
             _i += 1
             
             if ((_i == _batch_size)|(qid == self.res.qid.unique()[-1])):
-                avg_logProb_list = self.cal_part_logprob_in_batch(doc_texts, self.device, _max_tokens)
+                _, token_num_without_doc, logprob_sum_without_doc = self.cal_part_logprob_in_batch(query_texts, self.device, 100)
+                _, token_num_with_doc, logprob_sum_with_doc = self.cal_part_logprob_in_batch(doc_texts, self.device, _max_tokens)
                 torch.cuda.empty_cache()
-                prob_res.update(dict(zip(_qid_to_write, avg_logProb_list)))
-                _qid_to_write = []
-                doc_texts = []
+                prob_res.update(dict(zip(_qid_to_write, ((logprob_sum_with_doc - logprob_sum_without_doc)/(token_num_with_doc-token_num_without_doc)).tolist())))
+
+                query_texts, doc_texts, _qid_to_write = [], [], []
                 _i = 0
                 
                 f = open(output_path, 'w')
