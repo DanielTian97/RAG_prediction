@@ -1,1 +1,0 @@
-Here store the .pkl files for the entailment matrix.
