@@ -1,85 +1,95 @@
 # Predicting Retrieval Utility and Answer Quality in RAG
 
-Research code for **Predicting Retrieval Utility and Answer Quality in Retrieval-Augmented Generation**, by Fangzheng Tian, Debasis Ganguly, and Craig Macdonald (ECIR 2026).
+![Overview of the prediction framework](docs/figures/main_illustration.jpg)
 
-[Paper](https://arxiv.org/abs/2601.14546) · [Reproduction status](docs/reproduction-status.md)
+This repository contains the code for the ECIR 2026 paper **Predicting Retrieval Utility and Answer Quality in Retrieval-Augmented Generation**, by Fangzheng Tian, Debasis Ganguly, and Craig Macdonald.
 
-## Prediction tasks
+**Paper:** https://arxiv.org/abs/2601.14546
 
-- **Retrieval Performance Prediction (RPP):** predict context utility, the difference between answer quality with and without retrieved context: `U = P_k - P_0`.
-- **Generation Performance Prediction (GPP):** predict answer quality with retrieved context: `P_k`.
+## Main findings
 
-The paper combines QPP signals, context perplexity (PerpC), document quality and readability, and post-generation answer perplexity (PerpA) through linear regression. NQ experiments use BM25, BM25 followed by MonoT5, and E5, with context sizes 2, 3, 5, 7, and 10. Prediction accuracy is evaluated using Spearman correlation.
+We study two prediction targets in RAG:
 
-## Current status
+- **GPP:** answer quality of the RAG answer generated from a context composed of the top-`k` retrieved passages, `P_k`;
+- **RPP:** retrieval utility, `P_k - P_0`.
 
-This experimental codebase is undergoing cleanup. Cached QPP features and result summaries are included, but **the repository is not yet a self-contained reproduction package**. Several inputs come from external generation/evaluation directories. Historical TREC DL and coherence experiments are also retained.
+The experiments show that these targets can be predicted from signals available around the RAG pipeline, but different signals capture different aspects of performance. In particular, combining complementary feature families is consistently stronger than relying on a single signal. Context-side perplexity is especially useful for non-factoid settings, while answer-side confidence is particularly informative for factoid answer quality.
 
-The final experiment and presentation notebooks have been converted to Python, and their superseded versions removed. Stored results and precomputed features are unchanged. See [notebook provenance](docs/notebook-provenance.md) for the evidence, retained supporting notebooks, and recovery instructions.
+## Repository overview
 
-## Directory guide
+The code has two layers.
 
-| Location | Contents |
-| --- | --- |
-| `analysis/` | QPP methods, correlation utilities, exploratory notebooks, and regression analyses |
-| `analysis/precomputed_qpps/` | Cached QPP feature CSVs by retriever, context size, and split |
-| `analysis/ecir_res/` | Single-predictor and ensemble result summaries, including earlier versions |
-| `analysis/plotting/` | Plotting notebook and stored figures |
-| `analysis/supervised_results/` | Supervised QPP outputs and model/tokenizer metadata |
-| `perplexity_eval/` | Individual/concatenated and query-conditioned context log-probability estimation |
-| `qualt5_eval/` | Individual-document and concatenated-context QualT5 scoring |
-| `readability_eval/` | Document and context readability computation |
-| `posterior_process/` | Historical zero-shot posterior processing |
-| `docs/` | Reproduction audit and outstanding requirements |
+### 1. Feature calculation
 
-## Getting started
+`compute_features.py` converts retrieval/generation inputs into a unified feature matrix using five feature families:
 
-Clone the repository, then inspect stored summaries without loading models:
+- `qpp/` — query performance prediction signals;
+- `context_perplexity/` — context perplexity;
+- `qualt5/` — QualT5 document quality;
+- `posteriors/` — post-generation answer confidence;
+- `readability/` — readability signals.
 
-```bash
-git clone https://github.com/DanielTian97/RAG_prediction.git
-cd RAG_prediction
-python - <<'PY'
-import csv
-from pathlib import Path
-for path in sorted(Path("analysis/ecir_res").glob("*.csv")):
-    with path.open(newline="") as handle:
-        rows = csv.reader(handle)
-        columns = next(rows)
-        count = sum(1 for _ in rows)
-    print(path.name, count, "rows", columns)
-PY
-```
+### 2. Final prediction pipeline
 
-This standard-library example reads existing outputs; it does not rerun experiments. `requirements-analysis.txt` covers the converted analysis scripts; feature extraction and generation require additional dependencies. See the audit for external inputs and environment limitations.
+`analyse.py` combines the feature matrices with answer-quality evaluations, constructs the GPP/RPP targets, and produces the final single-feature and feature-combination correlation results.
 
-## Run the final analysis
+## Environment
 
-Install the analysis dependencies (this is not the full feature-extraction environment):
+Create the tested environment with:
 
 ```bash
-python -m pip install -r requirements-analysis.txt
+conda env create -f environment.yml -n rag_prediction
+conda activate rag_prediction
 ```
 
-Export Tables 1/2 and Figure 3 from the included summaries:
+### Machine requirements
+
+For the included smoke tests, a CPU machine is sufficient.
+
+For full reproduction:
+
+- **Java 17** is required by PyTerrier;
+- a **GPU is recommended** for the default 8B language model used for context perplexity;
+- allow substantial local storage for retrieval artifacts: the public RagWiki dense E5 index is about 65 GB and the sparse Terrier index about 13 GB;
+- additional space is needed for model checkpoints and local document-text data.
+
+## Minimal usage
+
+First verify the installation:
 
 ```bash
-python analysis/report_results.py --output-dir /tmp/ecir-report
+bash scripts/smoke_test.sh
+bash scripts/smoke_pipeline.sh
 ```
 
-Use a new or empty output directory. Exports include CSVs, plain LaTeX tables, a separate notebook-significance CSV, and PDF/SVG/PNG plots. This reconstructs presentation from stored correlations; it does not refit models. All 84 numeric cells in Tables 1/2 match the paper at four decimal places.
-
-Check external inputs before rerunning the experiment:
+Compute features for one retrieval condition:
 
 ```bash
-python analysis/run_experiments.py --material-dir /path/to/rag_utility --output-dir /tmp/ecir-run --check-inputs
+python compute_features.py \
+  --retrieval-csv data/retrieval/nq_test/e5.csv \
+  --generation-json data/generations/nq_test/e5_k3.json \
+  --doc-dict data/doc_dicts/nq_wiki_dict.pkl \
+  --qpp-precomputed data/qpp/nq_test/e5_k3.csv \
+  --dataset nq_test \
+  --retriever e5 \
+  --k 3
 ```
 
-Once inputs are available, omit `--check-inputs` to run. NQ is the default; use `--context-sizes 2 --retrievers e5` for a smaller run, or `--tasks nq dl` to include the historical DL experiments. The script uses the existing feature directories in this checkout and requires a new or empty output directory. Paths are independent of the shell working directory.
-
-Code aliases: `mt5` = BM25 followed by MonoT5, `spatial` = DenseQPP, `a_ratio` = A-Pair-Ratio, and `prob(k)` = answer confidence. Original probability transformations are preserved pending provenance reconciliation; see [reproduction status](docs/reproduction-status.md).
+Then run the final analysis:
 
 ```bash
-python -m unittest discover -s tests
-python tests/check_notebook_parity.py
+python analyse.py \
+  --dev-features outputs/features/nq_dev_e5_k3/features.csv \
+  --test-features outputs/features/nq_test_e5_k3/features.csv \
+  --dev-zero-eval data/evaluations/nq_dev/zero_context.json \
+  --dev-k-eval data/evaluations/nq_dev/e5_k3.json \
+  --test-zero-eval data/evaluations/nq_test/zero_context.json \
+  --test-k-eval data/evaluations/nq_test/e5_k3.json \
+  --task nq \
+  --retriever e5 \
+  --k 3
 ```
+
+Feature outputs are written under `outputs/features/`, and final correlation results under `outputs/correlations/`.
+
+See `data/README.md` for the expected local input formats. The repository includes only a small historical smoke-test fixture, not the full experiment data.

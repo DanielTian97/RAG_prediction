@@ -1,15 +1,18 @@
-coherence_eval/coherence_res/*.pkl
-coherence_eval/coherence_res/*/*.pkl
-*model.safetensors
-perplexity_eval/log_prob_temp_res/*.json
-perplexity_eval/log_prob_temp_res/*/*.json
-qualt5_eval/quality_res/*.csv
-readability_eval/readability_res/*.csv
-readability_eval/readability_res/*.pkl
-analysis/retr_res/*.csv
-*.ipynb_checkpoints
+# Local reproduction data are not distributed with the repository.
+data/*
+!data/README.md
+!data/examples/
+!data/examples/e5_k3_qpp_dl_smoke.csv
 
-# Local Python and editor artifacts
+# Generated intermediate feature matrices
+outputs/features/
+
+# Large local model/checkpoint artifacts
+*model.safetensors
+*.pt
+*.ckpt
+
+# Python and editor artifacts
 __pycache__/
 *.py[cod]
 .history/

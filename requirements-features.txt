@@ -1,0 +1,13 @@
+# Additional dependencies required by compute_features.py.
+# Model/index availability is environment-specific and therefore not pinned here.
+numpy
+pandas
+scikit-learn
+python-terrier
+pyterrier-alpha>=0.2.0
+pyterrier-dr
+transformers
+torch
+nltk
+py-readability-metrics
+git+https://github.com/terrierteam/pyterrier-quality

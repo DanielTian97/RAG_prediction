@@ -1,0 +1,21 @@
+qid,query,qpp_estimate,qpp_method
+1030303,who is aziz hashim,0.002005307391001607,nqc
+1037496,who is rep scalise,5.561742828694335e-07,nqc
+1037798,who is robert gray,0.0007672338951367411,nqc
+1043135,who killed nicholas ii of russia,0.0008886868171024289,nqc
+104861,cost of interior concrete flooring,3.6017742035321186e-05,nqc
+1051399,who sings monk theme song,0.0013674356707632108,nqc
+1063750,why did the us volunterilay enter ww1,1.700129696916366e-05,nqc
+1064670,why do hunters pattern their shotguns,0.00014015414942230203,nqc
+1071750,why is pete rose banned from hall of fame,0.00010288982312456541,nqc
+1103812,who formed the commonwealth of independent states,0.00045769074979929575,nqc
+1030303,who is aziz hashim,0.88574195,maxScore
+1037496,who is rep scalise,0.8886156,maxScore
+1037798,who is robert gray,0.86032355,maxScore
+1043135,who killed nicholas ii of russia,0.8900659,maxScore
+104861,cost of interior concrete flooring,0.9065757,maxScore
+1051399,who sings monk theme song,0.90225136,maxScore
+1063750,why did the us volunterilay enter ww1,0.8888843,maxScore
+1064670,why do hunters pattern their shotguns,0.9116752,maxScore
+1071750,why is pete rose banned from hall of fame,0.8956197,maxScore
+1103812,who formed the commonwealth of independent states,0.88255537,maxScore

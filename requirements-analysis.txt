@@ -1,8 +1,5 @@
-# Analysis/report scripts only; not feature extraction or generation.
-# Versions are intentionally unpinned pending recovery of the original environment.
+# Lightweight dependencies required by analyse.py only.
 numpy
 pandas
 scipy
 scikit-learn
-matplotlib
-tqdm
