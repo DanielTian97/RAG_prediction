@@ -1,0 +1,8 @@
+# Analysis/report scripts only; not feature extraction or generation.
+# Versions are intentionally unpinned pending recovery of the original environment.
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+tqdm

@@ -15,7 +15,7 @@ The paper combines QPP signals, context perplexity (PerpC), document quality and
 
 This experimental codebase is undergoing cleanup. Cached QPP features and result summaries are included, but **the repository is not yet a self-contained reproduction package**. Several inputs come from external generation/evaluation directories. Historical TREC DL and coherence experiments are also retained.
 
-All experiment source files, notebooks, precomputed features, and results are preserved in this first cleanup. Read the [reproduction audit](docs/reproduction-status.md) before running notebooks: some append to existing outputs, and the final presentation notebook has a known fresh-kernel issue.
+The final experiment and presentation notebooks have been converted to Python, and their superseded versions removed. Stored results and precomputed features are unchanged. See [notebook provenance](docs/notebook-provenance.md) for the evidence, retained supporting notebooks, and recovery instructions.
 
 ## Directory guide
 
@@ -51,10 +51,35 @@ for path in sorted(Path("analysis/ecir_res").glob("*.csv")):
 PY
 ```
 
-This standard-library example reads existing outputs; it does not rerun experiments. There is no validated repository-wide installation command yet. `qualt5_eval/requirements.txt` is component-specific and incomplete for the full workflow. See the audit for observed dependencies and required inputs.
+This standard-library example reads existing outputs; it does not rerun experiments. `requirements-analysis.txt` covers the converted analysis scripts; feature extraction and generation require additional dependencies. See the audit for external inputs and environment limitations.
 
-## Experiment navigation
+## Run the final analysis
 
-`analysis/easy_analysis_readability-v2.ipynb` assembles features and targets, fits regressions, and writes the `*_output_v2.csv` summaries. `analysis/final_analysis_v3.ipynb` reads these summaries to prepare tables and context-size plots. These are candidate paper entry points based on their contents; exact reproduction of published numbers remains to be validated.
+Install the analysis dependencies (this is not the full feature-extraction environment):
 
-Code aliases include `mt5` for BM25 followed by MonoT5, `spatial` for DenseQPP, `a_ratio` for A-Pair-Ratio, and `prob(k)` for answer confidence. Probability transformations require reconciliation with the paper before refactoring, as explained in the audit.
+```bash
+python -m pip install -r requirements-analysis.txt
+```
+
+Export Tables 1/2 and Figure 3 from the included summaries:
+
+```bash
+python analysis/report_results.py --output-dir /tmp/ecir-report
+```
+
+Use a new or empty output directory. Exports include CSVs, plain LaTeX tables, a separate notebook-significance CSV, and PDF/SVG/PNG plots. This reconstructs presentation from stored correlations; it does not refit models. All 84 numeric cells in Tables 1/2 match the paper at four decimal places.
+
+Check external inputs before rerunning the experiment:
+
+```bash
+python analysis/run_experiments.py --material-dir /path/to/rag_utility --output-dir /tmp/ecir-run --check-inputs
+```
+
+Once inputs are available, omit `--check-inputs` to run. NQ is the default; use `--context-sizes 2 --retrievers e5` for a smaller run, or `--tasks nq dl` to include the historical DL experiments. The script uses the existing feature directories in this checkout and requires a new or empty output directory. Paths are independent of the shell working directory.
+
+Code aliases: `mt5` = BM25 followed by MonoT5, `spatial` = DenseQPP, `a_ratio` = A-Pair-Ratio, and `prob(k)` = answer confidence. Original probability transformations are preserved pending provenance reconciliation; see [reproduction status](docs/reproduction-status.md).
+
+```bash
+python -m unittest discover -s tests
+python tests/check_notebook_parity.py
+```
