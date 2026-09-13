@@ -8,3 +8,12 @@ readability_eval/readability_res/*.csv
 readability_eval/readability_res/*.pkl
 analysis/retr_res/*.csv
 *.ipynb_checkpoints
+
+# Local Python and editor artifacts
+__pycache__/
+*.py[cod]
+.history/
+.ipynb_checkpoints/
+.venv/
+venv/
+.pytest_cache/
