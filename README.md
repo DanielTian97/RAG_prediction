@@ -2,11 +2,11 @@
 
 ![Overview of the prediction framework](docs/figures/main_illustration.jpg)
 
-This repository contains the code for the ECIR 2026 paper **Predicting Retrieval Utility and Answer Quality in Retrieval-Augmented Generation**, by Fangzheng Tian, Debasis Ganguly, and Craig Macdonald.
+💻 This repository contains the code for the ECIR 2026 paper **Predicting Retrieval Utility and Answer Quality in Retrieval-Augmented Generation**, by Fangzheng Tian, Debasis Ganguly, and Craig Macdonald.
 
-**Paper:** https://arxiv.org/abs/2601.14546
+📄 **Paper:** https://arxiv.org/abs/2601.14546 **and also** https://link.springer.com/chapter/10.1007/978-3-032-21289-4_24
 
-## Main findings
+## 🔍 Main findings
 
 We study two prediction targets in RAG:
 
@@ -15,7 +15,7 @@ We study two prediction targets in RAG:
 
 The experiments show that these targets can be predicted from signals available around the RAG pipeline, but different signals capture different aspects of performance. In particular, combining complementary feature families is consistently stronger than relying on a single signal. Context-side perplexity is especially useful for non-factoid settings, while answer-side confidence is particularly informative for factoid answer quality.
 
-## Repository overview
+## 🧩 Repository overview
 
 The code has two layers.
 
